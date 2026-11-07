@@ -41,11 +41,20 @@
     var caption = root.querySelector('.slider-caption');
     if (slides.length < 2) return;
     var i = 0, timer = null;
+    // Hidden slides carry data-src and only download when they are about to be shown.
+    function load(n) {
+      var img = slides[(n + slides.length) % slides.length];
+      if (img && img.dataset.src) { img.src = img.dataset.src; img.removeAttribute('data-src'); }
+    }
+    function preloadNext() { load(1); }
+    if (document.readyState === 'complete') setTimeout(preloadNext, 800);
+    else window.addEventListener('load', function () { setTimeout(preloadNext, 800); });
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var sliding = root.classList.contains('slider-slide');
     function show(n) {
       var prev = i;
       i = (n + slides.length) % slides.length;
+      load(i); load(i + 1);
       if (i === prev) return;
       if (sliding) {
         // Park the incoming slide off to the right (no animation) so it always enters right-to-left.

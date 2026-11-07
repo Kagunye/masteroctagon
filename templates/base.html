@@ -34,9 +34,9 @@
                 <a href="{% url 'core:about' %}" class="link-arrow">About Master Octagon {% icon 'arrow-up-right' 16 %}</a>
               </div>
               <div class="mega-links">
-                <a href="{% url 'core:about' %}" class="mega-card"><img src="{{ img.about }}" alt="" loading="lazy"><span><small>01</small>About us</span></a>
-                <a href="{% url 'core:sectors' %}" class="mega-card"><img src="{{ img.sectors }}" alt="" loading="lazy"><span><small>02</small>Industries</span></a>
-                <a href="{% url 'core:projects' %}" class="mega-card"><img src="{{ img.projects }}" alt="" loading="lazy"><span><small>03</small>Projects</span></a>
+                <a href="{% url 'core:about' %}" class="mega-card"><img src="{{ img.about|md }}" alt="" loading="lazy"><span><small>01</small>About us</span></a>
+                <a href="{% url 'core:sectors' %}" class="mega-card"><img src="{{ img.sectors|md }}" alt="" loading="lazy"><span><small>02</small>Industries</span></a>
+                <a href="{% url 'core:projects' %}" class="mega-card"><img src="{{ img.projects|md }}" alt="" loading="lazy"><span><small>03</small>Projects</span></a>
               </div>
             </div>
           </div>
@@ -52,7 +52,7 @@
                 <a href="{% url 'core:sectors' %}" class="link-arrow">All industries {% icon 'arrow-up-right' 16 %}</a>
               </div>
               <div class="mega-links mega-industries">
-                {% for s in nav_industries %}<a href="{% url 'core:sectors' %}#{{ s.slug }}" class="mega-card"><img src="{{ s.image_url }}" alt="" loading="lazy"><span><small>{{ forloop.counter|stringformat:"02d" }}</small>{{ s.name }}</span></a>{% endfor %}
+                {% for s in nav_industries %}<a href="{% url 'core:sectors' %}#{{ s.slug }}" class="mega-card"><img src="{{ s.image_url|md }}" alt="" loading="lazy"><span><small>{{ forloop.counter|stringformat:"02d" }}</small>{{ s.name }}</span></a>{% endfor %}
               </div>
             </div>
           </div>

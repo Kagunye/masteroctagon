@@ -33,6 +33,8 @@ committed in `media/`. After editing content in the admin, refresh the export wi
 Stock photos (originally from Unsplash) are saved in `static/img/stock/`; your own images replace them.
 - **Products, categories, services, sectors, projects:** upload an image on the record in the admin.
 - **Page banners:** drop files into `static/img/pages/` named `hero`, `intro`, `why`, `about`, `products`, `services`, `sectors`, `projects`, `contact`, `quote` (`.jpg`, `.png` or `.webp`). See the README in that folder.
+- After adding photos, run `python manage.py optimize_images` to resize them (max 1600 px) and create the
+  800 px `@md` copies used by cards, thumbnails and menus.
 - After changing CSS/JS, bump `ASSET_VERSION` in `core/context_processors.py` so browsers reload them.
 
 ## Editing content

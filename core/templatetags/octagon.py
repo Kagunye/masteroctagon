@@ -45,3 +45,31 @@ def icon(name, size=24, cls=""):
         f'<svg class="icon {cls}" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
         f'stroke="currentColor" stroke-width="{sw}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{body}</svg>'
     )
+
+
+_md_cache = {}
+
+
+@register.filter
+def md(url):
+    """Medium (800 px) version of a local photo URL if one exists (see optimize_images), else the URL."""
+    if not url or url.startswith("http"):
+        return url
+    if url in _md_cache:
+        return _md_cache[url]
+    from pathlib import Path
+    from django.conf import settings
+
+    result = url
+    path_part, dot, ext = url.rpartition(".")
+    candidate = f"{path_part}@md.{ext}" if dot else url
+    if url.startswith(settings.MEDIA_URL):
+        fs = Path(settings.MEDIA_ROOT) / candidate[len(settings.MEDIA_URL):]
+    elif url.startswith("/static/"):
+        fs = Path(settings.BASE_DIR) / "static" / candidate[len("/static/"):]
+    else:
+        fs = None
+    if fs is not None and fs.exists():
+        result = candidate
+    _md_cache[url] = result
+    return result

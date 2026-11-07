@@ -13,12 +13,12 @@
       {% if slides %}
       <div class="slider detail-slider contain" data-slider>
         {% if product.image %}<img src="{{ product.image.url }}" alt="{{ product.name }}" class="slide active">{% endif %}
-        {% for g in slides %}<img src="{{ g.image.url }}" alt="{{ g.caption|default:product.name }}" class="slide {% if forloop.first and not product.image %}active{% endif %}">{% endfor %}
+        {% for g in slides %}<img {% if forloop.first and not product.image %}src{% else %}data-src{% endif %}="{{ g.image.url }}" alt="{{ g.caption|default:product.name }}" class="slide {% if forloop.first and not product.image %}active{% endif %}">{% endfor %}
         <div class="slider-dots">{% if product.image %}<button type="button" class="active" aria-label="Show image 1"></button>{% endif %}{% for g in slides %}<button type="button" class="{% if forloop.first and not product.image %}active{% endif %}" aria-label="Show image"></button>{% endfor %}</div>
       </div>
       <div class="thumbs" data-thumbs>
-        {% if product.image %}<button type="button" class="active"><img src="{{ product.image.url }}" alt=""></button>{% endif %}
-        {% for g in slides %}<button type="button" class="{% if forloop.first and not product.image %}active{% endif %}"><img src="{{ g.image.url }}" alt="" loading="lazy"></button>{% endfor %}
+        {% if product.image %}<button type="button" class="active"><img src="{{ product.image.url|md }}" alt=""></button>{% endif %}
+        {% for g in slides %}<button type="button" class="{% if forloop.first and not product.image %}active{% endif %}"><img src="{{ g.image.url|md }}" alt="" loading="lazy"></button>{% endfor %}
       </div>
       {% elif product.image %}<div class="detail-media"><img src="{{ product.image.url }}" alt="{{ product.name }}"></div>{% endif %}
       {% endwith %}

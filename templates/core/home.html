@@ -75,7 +75,7 @@
       <div class="tab-panels">
         {% for c in categories %}
         <div class="tab-panel {% if forloop.first %}active{% endif %} {% if c.has_product_photo %}product-photo{% endif %}" role="tabpanel">
-          <img src="{{ c.image_url }}" alt="{{ c.name }}" loading="lazy">
+          <img src="{{ c.image_url|md }}" alt="{{ c.name }}" loading="lazy">
           <div class="tab-panel-body">
             <p class="eyebrow">{{ c.code }} · {{ c.products.all|length }} product line{{ c.products.all|length|pluralize }}</p>
             <h3>{{ c.name }}</h3>
@@ -150,7 +150,7 @@
     <div class="cards cards-4">
       {% for s in sectors %}
       <a href="{% url 'core:sectors' %}#{{ s.slug }}" class="card card-ruled reveal {% cycle '' 'reveal-delay-1' 'reveal-delay-2' %}">
-        <div class="card-media">{% with slides=s.slides %}{% if slides|length > 1 %}<div class="slider slider-slide" data-slider data-interval="4000">{% for url, cap in slides %}<img src="{{ url }}" alt="{{ cap }}" class="slide {% if forloop.first %}active{% endif %}" loading="lazy">{% endfor %}<div class="slider-dots">{% for x in slides %}<button type="button" class="{% if forloop.first %}active{% endif %}" aria-label="Show image {{ forloop.counter }}"></button>{% endfor %}</div></div>{% else %}<img src="{{ s.image_url }}" alt="{{ s.name }}" loading="lazy">{% endif %}{% endwith %}<span class="badge">{{ forloop.counter|stringformat:"02d" }}</span></div>
+        <div class="card-media">{% with slides=s.slides %}{% if slides|length > 1 %}<div class="slider slider-slide" data-slider data-interval="4000">{% for url, cap in slides %}<img {% if forloop.first %}src{% else %}data-src{% endif %}="{{ url|md }}" alt="{{ cap }}" class="slide {% if forloop.first %}active{% endif %}" loading="lazy">{% endfor %}<div class="slider-dots">{% for x in slides %}<button type="button" class="{% if forloop.first %}active{% endif %}" aria-label="Show image {{ forloop.counter }}"></button>{% endfor %}</div></div>{% else %}<img src="{{ s.image_url|md }}" alt="{{ s.name }}" loading="lazy">{% endif %}{% endwith %}<span class="badge">{{ forloop.counter|stringformat:"02d" }}</span></div>
         <p class="eyebrow">Industry</p>
         <h3>{{ s.name }}</h3>
         <p class="desc">{{ s.summary|truncatewords:18 }}</p>

@@ -6,7 +6,7 @@
   <div class="shell">
     {% for c in categories %}
     <div class="feature-row {% cycle '' 'reverse' %}" id="{{ c.slug }}">
-      <a href="{{ c.get_absolute_url }}" class="feature-media reveal {% if c.has_product_photo %}product-photo{% endif %}"><img src="{{ c.image_url }}" alt="{{ c.name }}" loading="lazy">{% if c.code %}<span class="code">{{ c.code }}</span>{% endif %}</a>
+      <a href="{{ c.get_absolute_url }}" class="feature-media reveal {% if c.has_product_photo %}product-photo{% endif %}"><img src="{{ c.image_url|md }}" alt="{{ c.name }}" loading="lazy">{% if c.code %}<span class="code">{{ c.code }}</span>{% endif %}</a>
       <div class="feature-body reveal reveal-delay-1">
         <p class="eyebrow">{{ forloop.counter|stringformat:"02d" }} · Category</p>
         <h2>{{ c.name }}</h2>

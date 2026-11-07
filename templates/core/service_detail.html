@@ -11,7 +11,7 @@
     <div class="reveal">
       {% with slides=service.gallery.all %}{% if slides %}
       <div class="slider detail-slider" data-slider>
-        {% for g in slides %}<img src="{{ g.image.url }}" alt="{{ g.caption|default:service.name }}" class="slide {% if forloop.first %}active{% endif %}">{% endfor %}
+        {% for g in slides %}<img {% if forloop.first %}src{% else %}data-src{% endif %}="{{ g.image.url }}" alt="{{ g.caption|default:service.name }}" class="slide {% if forloop.first %}active{% endif %}">{% endfor %}
         {% if slides|length > 1 %}<div class="slider-dots">{% for g in slides %}<button type="button" class="{% if forloop.first %}active{% endif %}" aria-label="Show image {{ forloop.counter }}"></button>{% endfor %}</div>{% endif %}
         <p class="slider-caption">{{ slides.0.caption }}</p>
       </div>

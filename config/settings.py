@@ -149,6 +149,7 @@ WHITENOISE_USE_FINDERS = True
 import warnings  # noqa: E402
 warnings.filterwarnings('ignore', message='No directory at', module='whitenoise.base')
 WHITENOISE_AUTOREFRESH = DEBUG
+WHITENOISE_MAX_AGE = 0 if DEBUG else 604800  # one week in production
 # Serve uploaded/committed photos from media/ (Django only does this in DEBUG by default).
 SERVE_MEDIA = DEBUG or IS_VERCEL or os.environ.get('DJANGO_SERVE_MEDIA') == '1'
 MEDIA_URL = 'media/'

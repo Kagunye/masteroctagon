@@ -6,7 +6,7 @@
   <div class="shell">
     {% for s in sectors %}
     <div class="feature-row {% cycle '' 'reverse' %}" id="{{ s.slug }}">
-      <div class="feature-media reveal">{% with slides=s.slides %}{% if slides|length > 1 %}<div class="slider slider-slide" data-slider data-interval="4000">{% for url, cap in slides %}<img src="{{ url }}" alt="{{ cap }}" class="slide {% if forloop.first %}active{% endif %}" loading="lazy">{% endfor %}<div class="slider-dots">{% for x in slides %}<button type="button" class="{% if forloop.first %}active{% endif %}" aria-label="Show image {{ forloop.counter }}"></button>{% endfor %}</div></div>{% else %}<img src="{{ s.image_url }}" alt="{{ s.name }}" loading="lazy">{% endif %}{% endwith %}<span class="code">{{ forloop.counter|stringformat:"02d" }}</span></div>
+      <div class="feature-media reveal">{% with slides=s.slides %}{% if slides|length > 1 %}<div class="slider slider-slide" data-slider data-interval="4000">{% for url, cap in slides %}<img {% if forloop.first %}src{% else %}data-src{% endif %}="{{ url|md }}" alt="{{ cap }}" class="slide {% if forloop.first %}active{% endif %}" loading="lazy">{% endfor %}<div class="slider-dots">{% for x in slides %}<button type="button" class="{% if forloop.first %}active{% endif %}" aria-label="Show image {{ forloop.counter }}"></button>{% endfor %}</div></div>{% else %}<img src="{{ s.image_url|md }}" alt="{{ s.name }}" loading="lazy">{% endif %}{% endwith %}<span class="code">{{ forloop.counter|stringformat:"02d" }}</span></div>
       <div class="feature-body reveal reveal-delay-1">
         <p class="eyebrow">Industry {{ forloop.counter|stringformat:"02d" }}</p>
         <h2>{{ s.name }}</h2>
