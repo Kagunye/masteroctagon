@@ -39,7 +39,8 @@ class ProductCategory(Ordered):
 
     @property
     def has_product_photo(self):
-        return not self.image and not self.image_url.startswith("http")
+        url = self.image_url
+        return not self.image and not url.startswith("http") and "/img/stock/" not in url
 
     def __str__(self):
         return self.name

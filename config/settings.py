@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 import os
+import tempfile
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,14 +24,24 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DJANGO_DEBUG', '1') == '1'
+# Running on Vercel? (Vercel sets VERCEL=1.) Production defaults apply there.
+IS_VERCEL = bool(os.environ.get('VERCEL'))
+
+DEBUG = os.environ.get('DJANGO_DEBUG', '0' if IS_VERCEL else '1') == '1'
 
 # A real DJANGO_SECRET_KEY is required in production; the fallback is for local development only.
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY') or ('dev-only-insecure-key' if DEBUG else None)
 if not SECRET_KEY:
     raise RuntimeError('Set the DJANGO_SECRET_KEY environment variable.')
 
-ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
+PRODUCTION_HOST = 'masteroctagon-grwj.vercel.app'
+ALLOWED_HOSTS = [h for h in os.environ.get('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',') if h] + [PRODUCTION_HOST]
+CSRF_TRUSTED_ORIGINS = [o for o in os.environ.get('DJANGO_CSRF_TRUSTED_ORIGINS', '').split(',') if o] + [f'https://{PRODUCTION_HOST}']
+if IS_VERCEL:
+    ALLOWED_HOSTS += ['.vercel.app']
+    CSRF_TRUSTED_ORIGINS += ['https://*.vercel.app']
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SESSION_COOKIE_SECURE = CSRF_COOKIE_SECURE = True
 
 
 # Application definition
@@ -47,6 +58,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -80,12 +92,19 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+# DATABASE_URL (e.g. a hosted Postgres) is used when set. On Vercel without it, a temporary
+# SQLite database is built from core/fixtures/site_content.json at cold start (see config/wsgi.py);
+# pages work, but form submissions are not kept between restarts.
+if os.environ.get('DATABASE_URL'):
+    import dj_database_url
+    DATABASES = {'default': dj_database_url.parse(os.environ['DATABASE_URL'], conn_max_age=60, ssl_require=IS_VERCEL)}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': Path(tempfile.gettempdir()) / 'masteroctagon.sqlite3' if IS_VERCEL else BASE_DIR / 'db.sqlite3',
+        }
     }
-}
 
 
 # Password validation
@@ -125,6 +144,13 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+# WhiteNoise serves files straight from STATICFILES_DIRS, so no collectstatic step is needed.
+WHITENOISE_USE_FINDERS = True
+import warnings  # noqa: E402
+warnings.filterwarnings('ignore', message='No directory at', module='whitenoise.base')
+WHITENOISE_AUTOREFRESH = DEBUG
+# Serve uploaded/committed photos from media/ (Django only does this in DEBUG by default).
+SERVE_MEDIA = DEBUG or IS_VERCEL or os.environ.get('DJANGO_SERVE_MEDIA') == '1'
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 

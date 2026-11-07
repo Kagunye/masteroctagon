@@ -6,8 +6,8 @@ How to use your own images:
   the page key, e.g. static/img/pages/hero.jpg, about.jpg, products.jpg (jpg, jpeg, png or webp).
   Keys: bw (home black-and-white band), hero, home_intro (home "Built on engineering" image), intro (About page), why, about, products, services, sectors, projects, contact, quote.
 
-Anything you haven't supplied falls back to a placeholder photo from Unsplash
-(free licence: https://unsplash.com/license).
+Anything you haven't supplied falls back to a stock photo saved in static/img/stock/
+(originally from Unsplash, free licence: https://unsplash.com/license).
 """
 from django.conf import settings
 from django.templatetags.static import static
@@ -83,8 +83,16 @@ SECTOR = {
 }
 
 
+STOCK_DIR = settings.BASE_DIR / "static" / "img" / "stock"
+
+
 def photo(key, w=1600):
-    return unsplash(PHOTOS.get(key, PHOTOS["refinery_dusk"]), w)
+    """Stock photo URL: the local copy in static/img/stock/<key>.jpg, else Unsplash."""
+    if key not in PHOTOS:
+        key = "refinery_dusk"
+    if (STOCK_DIR / f"{key}.jpg").exists():
+        return static(f"img/stock/{key}.jpg")
+    return unsplash(PHOTOS[key], w)
 
 
 def _local(name):

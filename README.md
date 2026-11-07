@@ -30,7 +30,7 @@ committed in `media/`. After editing content in the admin, refresh the export wi
 "Gallery images" section in the admin that drives the product-page slideshow.
 
 ## Images
-Until you add your own, the site shows placeholder photos from Unsplash.
+Stock photos (originally from Unsplash) are saved in `static/img/stock/`; your own images replace them.
 - **Products, categories, services, sectors, projects:** upload an image on the record in the admin.
 - **Page banners:** drop files into `static/img/pages/` named `hero`, `intro`, `why`, `about`, `products`, `services`, `sectors`, `projects`, `contact`, `quote` (`.jpg`, `.png` or `.webp`). See the README in that folder.
 - After changing CSS/JS, bump `ASSET_VERSION` in `core/context_processors.py` so browsers reload them.
@@ -40,6 +40,21 @@ Until you add your own, the site shows placeholder photos from Unsplash.
 - Company phone, email, address, hours and countries: `core/context_processors.py` (`COMPANY`).
 - Homepage stats: `STATS` in `core/views.py`.
 - Icons: keys in `core/templatetags/octagon.py` (pump, tank, gauge, valve, shield, wrench, build, clipboard, calibrate, station, terminal, factory …).
+
+## Deploying on Vercel
+The repo is ready for Vercel (`vercel.json`, `config/wsgi.py` exposes `app`). Import the GitHub repo in
+Vercel, then set these environment variables in the project settings:
+
+| Variable | Value |
+|---|---|
+| `DJANGO_SECRET_KEY` | a long random string (**required**; the site will not start without it) |
+| `DATABASE_URL` | optional: a Postgres URL (e.g. Vercel Postgres / Neon) so enquiries and admin edits are kept |
+
+Without `DATABASE_URL`, each cold start builds a temporary database from `core/fixtures/site_content.json`:
+all pages work, but contact/quote submissions and admin changes are lost when the instance restarts.
+With Postgres, run once from your machine: `DATABASE_URL=... python manage.py migrate && python manage.py loaddata site_content && python manage.py createsuperuser`.
+Static files are served by WhiteNoise and photos from `media/`, so no extra storage is needed.
+The live host `masteroctagon-grwj.vercel.app` is already in `ALLOWED_HOSTS`.
 
 ## Production settings (environment variables)
 | Variable | Purpose |
