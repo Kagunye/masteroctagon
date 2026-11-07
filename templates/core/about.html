@@ -1,0 +1,63 @@
+{% extends "base.html" %}{% load octagon %}
+{% block title %}About us | {{ company.name }}{% endblock %}
+{% block content %}
+{% include "core/_page_hero.html" with image=img.about eyebrow="The company" heading="Engineering East Africa's <em>fuel infrastructure.</em>" lead="A privately owned company specialising in petroleum equipment and related engineering services." crumb="About" %}
+
+<section class="section">
+  <div class="shell intro">
+    <div class="intro-media reveal">
+      <img src="{{ img.intro }}" alt="Master Octagon engineer on site" loading="lazy">
+    </div>
+    <div class="intro-body reveal reveal-delay-1">
+      <p class="eyebrow">Who we are</p>
+      <h2>Equipment specialists and engineers, <em>one accountable team.</em></h2>
+      <hr class="rule">
+      <div class="copy">
+        <p>Master Octagon is a privately owned company specialising in petroleum equipment and related engineering services. We operate within the oil and gas downstream sector, supporting retail fuel stations, terminals and industrial fuel operations across East Africa.</p>
+        <p>Our team brings together equipment specialists, mechanical and electrical engineers and certified field technicians. We work with fuel marketers, independent station owners, depot operators and industrial users to deliver facilities that are safe, accurate and built to last.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="shell"><div class="stats-grid">{% for value, label in stats %}<div class="stat"><strong>{{ value }}</strong><span>{{ label }}</span></div>{% endfor %}</div></div>
+</section>
+
+<section class="section">
+  <div class="shell mission">
+    <div class="reveal">
+      <p class="eyebrow">Our mission</p>
+      <blockquote style="margin-top:20px">To be East Africa's most trusted partner for petroleum equipment and engineering — delivering <em>safe, compliant and efficient</em> fuel infrastructure.</blockquote>
+    </div>
+    <div class="reveal reveal-delay-1">
+      <p class="eyebrow">Our vision</p>
+      <blockquote style="margin-top:20px">Reliable, modern and <em>environmentally responsible</em> fuel handling at every station, depot and site we touch.</blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="section section-ink on-dark">
+  <div class="shell">
+    <div class="section-head split">
+      <div><p class="eyebrow">Our values</p><h2 class="section-title">How we <em>work.</em></h2></div>
+      <p class="aside">The principles behind every site survey, installation and call-out.</p>
+    </div>
+    <div class="values">
+      <div class="value reveal">{% icon 'shield' 32 %}<h3>Safety</h3><p>Zero harm on every site. Hazardous-area work is planned, permitted and supervised by competent people.</p></div>
+      <div class="value reveal reveal-delay-1">{% icon 'calibrate' 32 %}<h3>Accuracy</h3><p>Every litre counts. We install and calibrate metering to protect our customers' margins and their customers' trust.</p></div>
+      <div class="value reveal reveal-delay-2">{% icon 'leaf' 32 %}<h3>Environment</h3><p>Double-wall tanks, leak detection and vapour recovery to protect soil, groundwater and air.</p></div>
+      <div class="value reveal reveal-delay-3">{% icon 'wrench' 32 %}<h3>Responsiveness</h3><p>Fast mobilisation, local spares and a support line that answers when a station is down.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-muted">
+  <div class="shell">
+    <div class="section-head split">
+      <div><p class="eyebrow">Regional reach</p><h2 class="section-title">Serving <em>{{ company.countries|length }} countries.</em></h2></div>
+      <div class="chips" style="justify-self:end">{% for c in company.countries %}<span class="chip">{{ c }}</span>{% endfor %}</div>
+    </div>
+  </div>
+</section>
+{% endblock %}

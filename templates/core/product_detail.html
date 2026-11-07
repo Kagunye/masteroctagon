@@ -1,0 +1,51 @@
+{% extends "base.html" %}{% load octagon %}
+{% block title %}{{ product.name }} | {{ company.name }}{% endblock %}
+{% block meta_description %}{{ product.summary }}{% endblock %}
+{% block content %}
+{% url 'core:products' as products_url %}
+{% with crumb='<a href="'|add:products_url|add:'">Products</a><span>/</span><a href="'|add:product.category.get_absolute_url|add:'">'|add:product.category.name|add:'</a>' %}
+{% include "core/_page_hero.html" with product_photo=True image=product.image_url eyebrow=product.brand|default:product.category.name heading=product.name lead=product.summary %}
+{% endwith %}
+<section class="section">
+  <div class="shell detail">
+    <div class="reveal">
+      {% with slides=product.gallery.all %}
+      {% if slides %}
+      <div class="slider detail-slider contain" data-slider>
+        {% if product.image %}<img src="{{ product.image.url }}" alt="{{ product.name }}" class="slide active">{% endif %}
+        {% for g in slides %}<img src="{{ g.image.url }}" alt="{{ g.caption|default:product.name }}" class="slide {% if forloop.first and not product.image %}active{% endif %}">{% endfor %}
+        <div class="slider-dots">{% if product.image %}<button type="button" class="active" aria-label="Show image 1"></button>{% endif %}{% for g in slides %}<button type="button" class="{% if forloop.first and not product.image %}active{% endif %}" aria-label="Show image"></button>{% endfor %}</div>
+      </div>
+      <div class="thumbs" data-thumbs>
+        {% if product.image %}<button type="button" class="active"><img src="{{ product.image.url }}" alt=""></button>{% endif %}
+        {% for g in slides %}<button type="button" class="{% if forloop.first and not product.image %}active{% endif %}"><img src="{{ g.image.url }}" alt="" loading="lazy"></button>{% endfor %}
+      </div>
+      {% elif product.image %}<div class="detail-media"><img src="{{ product.image.url }}" alt="{{ product.name }}"></div>{% endif %}
+      {% endwith %}
+      <div class="prose">
+        <h2>Overview</h2>
+        {{ product.description|linebreaks }}
+      </div>
+    </div>
+    <aside class="sticky reveal reveal-delay-1">
+      <div class="panel">
+        {% if product.feature_list %}
+        <p class="eyebrow">Specification</p>
+        <h3 style="margin-top:14px">Key features</h3>
+        <ul class="ticks">{% for f in product.feature_list %}<li>{% icon 'check' 16 %}<span>{{ f }}</span></li>{% endfor %}</ul>
+        {% endif %}
+        <a href="{% url 'core:quote' %}?item={{ product.name|urlencode }}" class="btn btn-primary btn-lg btn-block">Request a quote {% icon 'arrow-up-right' 16 %}</a>
+        <p class="muted small" style="margin-top:14px;text-align:center">Supply, installation and after-sales support available.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+{% if related %}
+<section class="section section-muted">
+  <div class="shell">
+    <div class="section-head"><div><p class="eyebrow">{{ product.category.name }}</p><h2 class="section-title">Related <em>equipment.</em></h2></div></div>
+    <div class="cards">{% for p in related %}{% include "core/_product_card.html" %}{% endfor %}</div>
+  </div>
+</section>
+{% endif %}
+{% endblock %}

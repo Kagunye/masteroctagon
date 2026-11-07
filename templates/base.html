@@ -1,0 +1,175 @@
+{% load static octagon %}<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ company.name }} | {{ company.tagline }}{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}Master Octagon supplies petroleum equipment and engineering services to retail fuel stations, terminals and industrial fuel operations across East Africa.{% endblock %}">
+  <meta name="theme-color" content="#1a0f0c">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/site.css' %}?v={{ asset_version }}">
+  <link rel="icon" href="{% static 'img/emblem.png' %}" type="image/png">
+  <link rel="apple-touch-icon" href="{% static 'img/apple-touch-icon.png' %}">
+</head>
+<body>
+{% with u=request.resolver_match.url_name %}
+  <header class="site-header {% block header_class %}{% endblock %}" id="top">
+    <div class="shell header-inner">
+      <a href="{% url 'core:home' %}" class="brand" aria-label="{{ company.name }} home">
+        <img src="{% static 'img/logo.webp' %}" alt="{{ company.legal_name }}" class="brand-logo" width="720" height="246">
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <div class="nav-item"><a href="{% url 'core:home' %}" class="nav-link {% if u == 'home' %}active{% endif %}">Home</a></div>
+        <div class="nav-item">
+          <a href="{% url 'core:about' %}" class="nav-link {% if u == 'about' or u == 'projects' %}active{% endif %}">Company {% icon 'chevron' 12 'chev' %}</a>
+          <div class="mega">
+            <div class="shell mega-inner">
+              <div class="mega-intro on-dark">
+                <p class="eyebrow">The company</p>
+                <h3>Engineering the <em style="color:var(--gold)">downstream.</em></h3>
+                <p>Petroleum equipment and engineering services for fuel stations, terminals and industry across East Africa.</p>
+                <a href="{% url 'core:about' %}" class="link-arrow">About Master Octagon {% icon 'arrow-up-right' 16 %}</a>
+              </div>
+              <div class="mega-links">
+                <a href="{% url 'core:about' %}" class="mega-card"><img src="{{ img.about }}" alt="" loading="lazy"><span><small>01</small>About us</span></a>
+                <a href="{% url 'core:sectors' %}" class="mega-card"><img src="{{ img.sectors }}" alt="" loading="lazy"><span><small>02</small>Industries</span></a>
+                <a href="{% url 'core:projects' %}" class="mega-card"><img src="{{ img.projects }}" alt="" loading="lazy"><span><small>03</small>Projects</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="{% url 'core:sectors' %}" class="nav-link {% if u == 'sectors' %}active{% endif %}">Industries {% icon 'chevron' 12 'chev' %}</a>
+          <div class="mega">
+            <div class="shell mega-inner mega-inner-wide">
+              <div class="mega-intro on-dark">
+                <p class="eyebrow">Industries</p>
+                <h3>Fuel systems for <em style="color:var(--gold)">every industry.</em></h3>
+                <p>From the forecourt to the airport apron, we engineer fuel infrastructure for the sectors that keep East Africa moving.</p>
+                <a href="{% url 'core:sectors' %}" class="link-arrow">All industries {% icon 'arrow-up-right' 16 %}</a>
+              </div>
+              <div class="mega-links mega-industries">
+                {% for s in nav_industries %}<a href="{% url 'core:sectors' %}#{{ s.slug }}" class="mega-card"><img src="{{ s.image_url }}" alt="" loading="lazy"><span><small>{{ forloop.counter|stringformat:"02d" }}</small>{{ s.name }}</span></a>{% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="{% url 'core:products' %}" class="nav-link {% if 'product' in u %}active{% endif %}">Products {% icon 'chevron' 12 'chev' %}</a>
+          <div class="mega">
+            <div class="shell mega-inner">
+              <div class="mega-intro on-dark">
+                <p class="eyebrow">Equipment</p>
+                <h3>Built for the <em style="color:var(--gold)">forecourt.</em></h3>
+                <p>Dispensers, storage, automation and terminal systems, supplied, installed and supported.</p>
+                <a href="{% url 'core:products' %}" class="link-arrow">All products {% icon 'arrow-up-right' 16 %}</a>
+              </div>
+              <div class="mega-list">
+                {% for c in nav_categories %}<a href="{{ c.get_absolute_url }}">{{ c.name }} {% icon 'arrow-up-right' 16 %}</a>{% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="{% url 'core:services' %}" class="nav-link {% if 'service' in u %}active{% endif %}">Services {% icon 'chevron' 12 'chev' %}</a>
+          <div class="mega">
+            <div class="shell mega-inner">
+              <div class="mega-intro on-dark">
+                <p class="eyebrow">Engineering services</p>
+                <h3>Concept to <em style="color:var(--gold)">commissioning.</em></h3>
+                <p>Design, construction, installation, calibration and round-the-clock maintenance.</p>
+                <a href="{% url 'core:services' %}" class="link-arrow">All services {% icon 'arrow-up-right' 16 %}</a>
+              </div>
+              <div class="mega-list">
+                {% for s in nav_services %}<a href="{{ s.get_absolute_url }}">{{ s.name }} {% icon 'arrow-up-right' 16 %}</a>{% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-item"><a href="{% url 'core:contact' %}" class="nav-link {% if u == 'contact' %}active{% endif %}">Contact</a></div>
+        <a href="{% url 'core:quote' %}" class="btn btn-primary btn-lg mobile-cta">Request a quote {% icon 'arrow-up-right' 16 %}</a>
+      </nav>
+
+      <div class="header-cta">
+        <a href="{% url 'core:quote' %}" class="btn btn-primary">Request a quote {% icon 'arrow-up-right' 14 %}</a>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">{% icon 'menu' 26 %}</button>
+      </div>
+    </div>
+  </header>
+{% endwith %}
+
+  {% if messages %}
+  <div class="messages" role="status">
+    {% for m in messages %}<div class="alert alert-{{ m.tags }}">{% icon 'check' 18 %} {{ m }}</div>{% endfor %}
+  </div>
+  {% endif %}
+
+  <main>{% block content %}{% endblock %}</main>
+
+  {% block cta %}
+  <section class="cta-band">
+    <div class="shell cta-inner">
+      <div>
+        <p class="eyebrow eyebrow-plain">Commercial enquiries</p>
+        <h2>Planning a station, depot or upgrade?</h2>
+        <p>Tell us about your site and our engineers will get back to you within one working day.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="{% url 'core:quote' %}" class="btn btn-light">Request a quote {% icon 'arrow-up-right' 14 %}</a>
+        <a href="{% url 'core:services' %}" class="btn btn-light">Our services {% icon 'arrow-up-right' 14 %}</a>
+      </div>
+    </div>
+  </section>
+  {% endblock %}
+
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-top">
+        <h2>Fuel infrastructure you can <em>count on.</em></h2>
+        <a href="{% url 'core:contact' %}" class="btn btn-primary">Start a conversation {% icon 'arrow-up-right' 14 %}</a>
+      </div>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="{% url 'core:home' %}" class="brand">
+            <img src="{% static 'img/logo.webp' %}" alt="{{ company.legal_name }}" class="brand-logo brand-logo-lg" width="720" height="246">
+          </a>
+          <p>A privately owned company specialising in petroleum equipment and engineering services for the downstream oil and gas sector across East Africa.</p>
+        </div>
+        <div>
+          <h4>Products</h4>
+          <nav>{% for c in nav_categories %}<a href="{{ c.get_absolute_url }}">{{ c.name }} {% icon 'arrow-up-right' 12 %}</a>{% endfor %}</nav>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <nav>
+            <a href="{% url 'core:about' %}">About us {% icon 'arrow-up-right' 12 %}</a>
+            <a href="{% url 'core:services' %}">Services {% icon 'arrow-up-right' 12 %}</a>
+            <a href="{% url 'core:sectors' %}">Industries {% icon 'arrow-up-right' 12 %}</a>
+            <a href="{% url 'core:projects' %}">Projects {% icon 'arrow-up-right' 12 %}</a>
+            <a href="{% url 'core:quote' %}">Request a quote {% icon 'arrow-up-right' 12 %}</a>
+            <a href="{% url 'core:contact' %}">Contact {% icon 'arrow-up-right' 12 %}</a>
+          </nav>
+        </div>
+        <div class="footer-contact">
+          <h4>Head office</h4>
+          <p>{% icon 'pin' 16 %} <span>{{ company.address }}</span></p>
+          <p>{% icon 'phone' 16 %} <a href="tel:{{ company.phone|cut:' ' }}">{{ company.phone }}</a></p>
+          <p>{% icon 'mail' 16 %} <a href="mailto:{{ company.email }}">{{ company.email }}</a></p>
+          <p>{% icon 'clock' 16 %} <span>{{ company.hours }}</span></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; {% now "Y" %} {{ company.legal_name }}. All rights reserved.</span>
+        <span>Serving {{ company.countries|join:" · " }}</span>
+      </div>
+    </div>
+    <div class="footer-word" aria-hidden="true">Master Octagon</div>
+  </footer>
+
+  <script src="{% static 'js/site.js' %}?v={{ asset_version }}"></script>
+</body>
+</html>

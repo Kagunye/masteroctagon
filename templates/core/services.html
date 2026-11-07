@@ -1,0 +1,28 @@
+{% extends "base.html" %}{% load octagon %}
+{% block title %}Engineering services | {{ company.name }}{% endblock %}
+{% block content %}
+{% include "core/_page_hero.html" with image=img.services eyebrow="Engineering services" heading="From concept to <em>commissioning.</em>" lead="End-to-end engineering for fuel infrastructure: design, construction, installation, calibration and maintenance." crumb="Services" %}
+<section class="section">
+  <div class="shell">
+    <div class="tiles">
+      {% for s in services %}
+      {% include "core/_service_tile.html" %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="section section-ink on-dark">
+  <div class="shell detail">
+    <div class="reveal">
+      <p class="eyebrow">How we deliver</p>
+      <h2 class="section-title">A clear process, <em>start to finish.</em></h2>
+    </div>
+    <ol class="steps reveal reveal-delay-1">
+      <li><strong>Survey &amp; scope</strong><span>Site visit, requirements and constraints captured by an engineer.</span></li>
+      <li><strong>Design &amp; proposal</strong><span>Drawings, equipment specification and a clear commercial offer.</span></li>
+      <li><strong>Build &amp; install</strong><span>Safe, supervised works to manufacturer and regulatory standards.</span></li>
+      <li><strong>Commission &amp; support</strong><span>Testing, calibration, handover documents and ongoing maintenance.</span></li>
+    </ol>
+  </div>
+</section>
+{% endblock %}

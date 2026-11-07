@@ -1,0 +1,2409 @@
+[
+{
+ "model": "core.productcategory",
+ "pk": 1,
+ "fields": {
+  "order": 0,
+  "is_active": true,
+  "name": "Fuel Dispensers",
+  "slug": "fuel-dispensers",
+  "code": "DSP",
+  "icon": "pump",
+  "summary": "Electronic and mechanical fuel dispensers for petrol, diesel and kerosene — single, multi-product and high-flow models for retail forecourts and fleet depots.",
+  "image": ""
+ }
+},
+{
+ "model": "core.productcategory",
+ "pk": 2,
+ "fields": {
+  "order": 1,
+  "is_active": true,
+  "name": "Storage Tanks",
+  "slug": "storage-tanks",
+  "code": "UST",
+  "icon": "tank",
+  "summary": "Underground and above-ground storage tanks in steel and composite construction, single or double-wall, fabricated to international standards.",
+  "image": ""
+ }
+},
+{
+ "model": "core.productcategory",
+ "pk": 3,
+ "fields": {
+  "order": 2,
+  "is_active": true,
+  "name": "Tank Gauging & Automation",
+  "slug": "tank-automation",
+  "code": "ATG",
+  "icon": "gauge",
+  "summary": "Automatic tank gauges, leak detection, forecourt controllers and station management systems that give real-time visibility of stock and sales.",
+  "image": ""
+ }
+},
+{
+ "model": "core.productcategory",
+ "pk": 4,
+ "fields": {
+  "order": 3,
+  "is_active": true,
+  "name": "Terminal & Depot Equipment",
+  "slug": "terminal-equipment",
+  "code": "TRM",
+  "icon": "terminal",
+  "summary": "Loading arms, flow meters, batch controllers and pumping systems for bulk fuel terminals, depots and aviation fuel facilities.",
+  "image": ""
+ }
+},
+{
+ "model": "core.productcategory",
+ "pk": 5,
+ "fields": {
+  "order": 4,
+  "is_active": true,
+  "name": "Pumps, Valves & Piping",
+  "slug": "pumps-valves",
+  "code": "PVP",
+  "icon": "valve",
+  "summary": "Submersible turbine pumps, transfer pumps, valves, flexible piping and fittings for fuel systems.",
+  "image": ""
+ }
+},
+{
+ "model": "core.productcategory",
+ "pk": 6,
+ "fields": {
+  "order": 5,
+  "is_active": true,
+  "name": "Accessories & Safety",
+  "slug": "accessories-safety",
+  "code": "SAF",
+  "icon": "shield",
+  "summary": "Nozzles, hoses, breakaways, spill containment, fire suppression and signage that keep forecourts safe and compliant.",
+  "image": ""
+ }
+},
+{
+ "model": "core.product",
+ "pk": 1,
+ "fields": {
+  "order": 0,
+  "is_active": true,
+  "category": 1,
+  "name": "Six-nozzle submersible fuel dispenser",
+  "slug": "multi-product-retail-dispenser",
+  "brand": "Ecotec",
+  "summary": "High-accuracy multi-product dispenser for busy retail forecourts, fed by a submersible pump.",
+  "description": "A commercial-grade dispenser built for high-traffic retail stations. Six nozzles let one island serve several vehicles and products at once, while the submersible-pump configuration keeps delivery smooth across all hoses.\n\nMetering is accurate to ±0.3%, and the unit is compatible with Fuelplus station management for remote pricing, shift reports and sales monitoring. Master Octagon supplies, installs and commissions the dispenser, and supports it with local spares.",
+  "features": "6 nozzles for multi-product forecourts\nMetering accuracy ±0.3%\nSubmersible-pump supply, 45 L/min per nozzle\nPetrol, diesel and kerosene\nCompatible with Fuelplus station management\n220 V supply, 0.75 kW\n2-year warranty",
+  "image": "",
+  "is_featured": true
+ }
+},
+{
+ "model": "core.product",
+ "pk": 2,
+ "fields": {
+  "order": 1,
+  "is_active": true,
+  "category": 1,
+  "name": "High-flow diesel dispenser",
+  "slug": "high-flow-diesel-dispenser",
+  "brand": "Ecotec",
+  "summary": "Robust dual-nozzle dispenser for truck stops, transport depots and fleet yards.",
+  "description": "Engineered for transport depots, truck stops and mining fleets where fast, reliable refuelling reduces vehicle downtime. A heavy-duty cabinet, clear dual displays and robust hydraulics make it suited to demanding, high-throughput sites.\n\nAvailable in several cabinet and display styles, with options for fleet card control and integration with station management software.",
+  "features": "Dual nozzles with independent displays\nHeavy-duty hydraulics for high throughput\nSuitable for diesel, petrol and kerosene\nFleet card and station software integration\nMultiple cabinet and colour options",
+  "image": "",
+  "is_featured": true
+ }
+},
+{
+ "model": "core.product",
+ "pk": 3,
+ "fields": {
+  "order": 2,
+  "is_active": true,
+  "category": 1,
+  "name": "Mobile fuel dispenser (M111)",
+  "slug": "mobile-fuel-dispenser",
+  "brand": "Ecotec",
+  "summary": "Compact dispenser with 10 m hose for tankers, bowsers and remote sites.",
+  "description": "A compact, self-contained dispenser for mounting on fuel trucks, bowsers, skid tanks or at remote sites without a fixed forecourt. It runs on 12 V, 24 V, 220 V or 380 V, so it can be powered from a vehicle battery or mains supply.\n\nA 10-metre hose with automatic shut-off nozzle reaches vehicles and machinery directly, and the meter delivers around 45 L/min.",
+  "features": "12 V / 24 V / 220 V / 380 V options\nFlow rate approx. 45 L/min\n10 m hose with automatic shut-off nozzle\nDiesel, petrol and kerosene\nIdeal for tankers, bowsers and remote sites\nCE and ISO certified",
+  "image": "",
+  "is_featured": false
+ }
+},
+{
+ "model": "core.product",
+ "pk": 4,
+ "fields": {
+  "order": 3,
+  "is_active": true,
+  "category": 2,
+  "name": "Double-walled underground storage tank",
+  "slug": "double-wall-underground-tank",
+  "brand": "Ecotec",
+  "summary": "Sealed double-wall fuel tank from 5,000 to 100,000 litres for filling stations.",
+  "description": "A sealed, double-walled cylindrical tank for underground fuel storage at filling stations. The secondary wall provides containment and an interstitial space for continuous leak monitoring, protecting soil and groundwater.\n\nTanks are built to the capacity and dimensions your site requires, and are supplied with test reports and outgoing inspection video. Master Octagon handles excavation, installation, pressure testing and connection to your pipework.",
+  "features": "Capacities from 5,000 L to 100,000 L\nDouble-wall construction with leak monitoring\nSingle or multi-compartment\nBuilt to site dimensions\nFactory test report and inspection video provided",
+  "image": "",
+  "is_featured": true
+ }
+},
+{
+ "model": "core.product",
+ "pk": 5,
+ "fields": {
+  "order": 4,
+  "is_active": true,
+  "category": 2,
+  "name": "Fuel cube container station (5,000 L)",
+  "slug": "fuel-cube-container-station",
+  "brand": "Ecotec",
+  "summary": "Self-contained, double-wall tank with built-in dispenser for site and fleet fuelling.",
+  "description": "A complete, transportable fuelling station: a double-walled carbon-steel tank with an integrated dispenser, ready to place on site and connect. It suits construction projects, mines, farms, generator sites and fleet depots that need secure on-site fuel without building a forecourt.\n\nThe 6 mm steel shell and double wall give strong protection against leaks and damage.",
+  "features": "5,000 L capacity (other sizes available)\nDouble-wall carbon steel, 6 mm\nIntegrated fuel dispenser\nTransportable and quick to commission\nFor construction, mining, agriculture and fleets",
+  "image": "",
+  "is_featured": true
+ }
+},
+{
+ "model": "core.product",
+ "pk": 6,
+ "fields": {
+  "order": 5,
+  "is_active": true,
+  "category": 3,
+  "name": "Automatic tank gauge with wireless probes (ATG)",
+  "slug": "automatic-tank-gauge-atg",
+  "brand": "Ecotec",
+  "summary": "Console and magnetostrictive probes reporting fuel and water levels to 0.01 mm.",
+  "description": "An automatic tank gauging system that measures fuel level, water ingress and temperature in every tank. Probes communicate wirelessly over LoRa, so there is no need to trench new cables across a working forecourt.\n\nReadings resolve to 0.01 mm for both oil and water, supporting accurate stock reconciliation, delivery checks and early leak warnings. Probe lengths from 1 to 3.5 m suit most tank sizes, and electronics are housed in an ATEX-rated enclosure.",
+  "features": "Fuel and water level resolution 0.01 mm\nWireless LoRa probes, no new cabling\nProbe lengths 1 to 3.5 m\nATEX-rated electronics box\nLow power, 40 mA or less\nStock, delivery and variance reporting",
+  "image": "",
+  "is_featured": true
+ }
+},
+{
+ "model": "core.product",
+ "pk": 7,
+ "fields": {
+  "order": 6,
+  "is_active": true,
+  "category": 3,
+  "name": "PTS controller and station management system",
+  "slug": "pts-station-management-system",
+  "brand": "Ecotec",
+  "summary": "Connects dispensers and tank gauges for remote pricing, reports and app monitoring.",
+  "description": "The PTS controller links your dispensers and automatic tank gauges into one station management system. Owners and managers can change prices, review sales and shift reports, and monitor tank stock from a web dashboard or mobile app.\n\nIt supports 1 to 8 nozzles per controller and works with ATEX and OIML-compliant equipment, making it a practical upgrade for independent stations and growing networks.",
+  "features": "Controls 1 to 8 nozzles per unit\nIntegrates automatic tank gauges (ATG)\nRemote price changes and sales reports\nMobile app and web dashboard\nShift and attendant reconciliation\nDesigned for a 10-year service life",
+  "image": "",
+  "is_featured": false
+ }
+},
+{
+ "model": "core.product",
+ "pk": 8,
+ "fields": {
+  "order": 8,
+  "is_active": true,
+  "category": 4,
+  "name": "3-inch tank truck discharging meter",
+  "slug": "tank-truck-discharging-meter",
+  "brand": "Ecotec",
+  "summary": "Industrial 3-inch meter skid for high-volume tanker unloading at depots.",
+  "description": "A heavy-duty 3-inch metering skid for depots and large stations receiving bulk deliveries. It gives an accurate, independent record of the volume unloaded from each tank truck.\n\nBuilt around an LC meter with mechanical register and display, explosion-proof electrics and rubber hoses, rated to 1.6 MPa to ATEX and OIML standards.",
+  "features": "3-inch connections for bulk unloading\nLC meter with register and display\nExplosion-proof electrical box\nMax pressure 1.6 MPa\nATEX and OIML standards\n12-month warranty",
+  "image": "",
+  "is_featured": false
+ }
+},
+{
+ "model": "core.product",
+ "pk": 9,
+ "fields": {
+  "order": 7,
+  "is_active": true,
+  "category": 4,
+  "name": "Electronic discharging meter skid (250 L/min)",
+  "slug": "electronic-discharging-meter-skid",
+  "brand": "Ecotec",
+  "summary": "Metered unloading skid that measures every delivery from tanker to storage tank.",
+  "description": "A pre-assembled unloading skid that meters fuel as it is discharged from road tankers into station or depot tanks, so every delivery is verified against the delivery note.\n\nThe skid combines an LC positive-displacement meter, electronic display, explosion-proof electrical box and two rubber hoses, rated to 1.6 MPa and built to ATEX and OIML standards.",
+  "features": "Up to 250 L/min unloading rate\nLC positive-displacement meter\nElectronic display with explosion-proof box\nTwo rubber delivery hoses included\nMax pressure 1.6 MPa\nATEX and OIML standards",
+  "image": "",
+  "is_featured": true
+ }
+},
+{
+ "model": "core.product",
+ "pk": 10,
+ "fields": {
+  "order": 9,
+  "is_active": true,
+  "category": 5,
+  "name": "ATEX submersible turbine pump (1 to 2 HP)",
+  "slug": "submersible-turbine-pump",
+  "brand": "Ecotec",
+  "summary": "Explosion-proof submersible pump delivering up to 240 L/min to multiple dispensers.",
+  "description": "An ATEX-certified submersible pump installed inside the underground tank to push fuel to several dispensers at once. It delivers consistent pressure and flow, quieter operation and fewer suction problems than dispenser-mounted pumps.\n\nAvailable in 1, 1.5 and 2 HP versions for 220 V or 380 V supply, with a 1.5-inch inlet and 2-inch outlet.",
+  "features": "1 HP, 1.5 HP and 2 HP options\nMax flow up to 240 L/min\nATEX explosion-proof certified\n220 V / 380 V, 1.1 kW\n1.5-inch inlet, 2-inch outlet\nFeeds multiple dispensers from one tank",
+  "image": "",
+  "is_featured": false
+ }
+},
+{
+ "model": "core.product",
+ "pk": 11,
+ "fields": {
+  "order": 10,
+  "is_active": true,
+  "category": 5,
+  "name": "HDPE underground petroleum pipe (UPP)",
+  "slug": "underground-petroleum-pipe",
+  "brand": "Ecotec",
+  "summary": "Corrosion-free 1.5 and 2-inch HDPE fuel piping with a service life of up to 50 years.",
+  "description": "Flexible HDPE underground petroleum pipe for connecting tanks, submersible pumps and dispensers. Unlike steel, it cannot corrode, and long continuous runs reduce buried joints and leak points.\n\nSupplied in 1.5-inch and 2-inch sizes in custom lengths, with matching elbows, tees and fittings, and a working life of up to 50 years.",
+  "features": "HDPE construction, corrosion-free\n1.5-inch and 2-inch sizes\nCustom lengths to minimise joints\nElbows, tees and fittings available\nService life up to 50 years",
+  "image": "",
+  "is_featured": false
+ }
+},
+{
+ "model": "core.product",
+ "pk": 12,
+ "fields": {
+  "order": 12,
+  "is_active": true,
+  "category": 6,
+  "name": "High-flow automatic fuel nozzle",
+  "slug": "automatic-fuel-nozzle",
+  "brand": "Ecotec",
+  "summary": "Automatic shut-off nozzle for retail and fleet dispensers, up to 80 L/min.",
+  "description": "An automatic shut-off nozzle that stops flow as soon as the tank is full, preventing spills and overfills. Suited to both retail and high-flow fleet dispensers.\n\nFitted with a 3/4-inch spout and available with BSPF or NPT inlet threads to match your hoses.",
+  "features": "Automatic shut-off\nFlow up to 80 L/min\n3/4-inch spout\nBSPF or NPT inlet thread\nFor petrol, diesel and kerosene",
+  "image": "",
+  "is_featured": false
+ }
+},
+{
+ "model": "core.product",
+ "pk": 13,
+ "fields": {
+  "order": 14,
+  "is_active": true,
+  "category": 6,
+  "name": "Tank manhole and cover (16 or 20-inch)",
+  "slug": "tank-manhole-cover",
+  "brand": "Ecotec",
+  "summary": "Durable SMC manhole for tank access chambers, round or square, flange-connected.",
+  "description": "A tough SMC composite manhole and cover for underground tank access chambers. It keeps water and debris out of the tank-top area while giving easy access for gauging, maintenance and deliveries.\n\nAvailable in 16-inch and 20-inch diameters, round or square, with a flanged connection rated to 0.9 MPa.",
+  "features": "SMC composite, corrosion-resistant\n16-inch or 20-inch diameter\nRound or square options\nFlanged connection, 0.9 MPa\nISO certified",
+  "image": "",
+  "is_featured": false
+ }
+},
+{
+ "model": "core.product",
+ "pk": 14,
+ "fields": {
+  "order": 11,
+  "is_active": true,
+  "category": 5,
+  "name": "YB-80 rotary vane transfer pump (3-inch)",
+  "slug": "rotary-vane-transfer-pump",
+  "brand": "Ecotec",
+  "summary": "Industrial 3-inch vane pump for bulk transfer and tanker loading, 5 to 1,000 L/min.",
+  "description": "A heavy-duty rotary vane pump for bulk fuel transfer at depots, terminals and on tank trucks. It self-primes reliably and handles a wide flow range, from 5 up to 1,000 L/min.\n\nSupplied as a complete set with a 7.5 kW motor and 3-inch connections, and certified to ATEX, OIML and MID standards.",
+  "features": "Flow range 5 to 1,000 L/min\n3-inch connections\n7.5 kW 380 V motor set\nRated speed 640 rpm\nATEX, OIML, MID and ISO certified\nFor depot transfer and tanker loading",
+  "image": "",
+  "is_featured": false
+ }
+},
+{
+ "model": "core.product",
+ "pk": 15,
+ "fields": {
+  "order": 13,
+  "is_active": true,
+  "category": 6,
+  "name": "1-inch safety breakaway valve",
+  "slug": "breakaway-valve",
+  "brand": "Ecotec",
+  "summary": "Separates the hose safely if a vehicle drives off with the nozzle still attached.",
+  "description": "A safety breakaway coupling fitted between the dispenser hose and nozzle. If a driver pulls away with the nozzle still in the tank, it separates cleanly and seals both sides, preventing spills and damage to the dispenser.\n\nRated to 18 bar and -40 °C to +120 °C, with a 1-inch connection.",
+  "features": "Seals both sides on separation\n1-inch connection\nWorking pressure 18 bar\nOperating range -40 °C to +120 °C\nProtects hoses and dispensers from drive-offs",
+  "image": "",
+  "is_featured": false
+ }
+},
+{
+ "model": "core.product",
+ "pk": 16,
+ "fields": {
+  "order": 15,
+  "is_active": true,
+  "category": 1,
+  "name": "Smart fuel dispenser with large display",
+  "slug": "smart-fuel-dispenser",
+  "brand": "Ecotec",
+  "summary": "Modern twin-pump dispenser with an oversized, easy-read display for retail forecourts.",
+  "description": "A modern retail dispenser with a large, high-visibility display that customers and attendants can read at a glance, even in bright sunlight. Twin Tatsuno pumps support a wide flow range for both cars and light commercial vehicles.\n\nIt runs on 110 V, 220 V or 380 V supplies and suits new builds and forecourt upgrades alike.",
+  "features": "Large high-visibility display\nTwin Tatsuno pump units\nFlow range 5 to 120 L/min\n110 / 220 / 380 V supply\nPetrol and diesel\n1-year warranty",
+  "image": "",
+  "is_featured": false
+ }
+},
+{
+ "model": "core.product",
+ "pk": 17,
+ "fields": {
+  "order": 16,
+  "is_active": true,
+  "category": 1,
+  "name": "Heavy-duty truck dispenser (200 L/min)",
+  "slug": "heavy-duty-truck-dispenser",
+  "brand": "Ecotec",
+  "summary": "Single-nozzle, 200 L/min dispenser for fast refuelling of trucks, buses and mining fleets.",
+  "description": "Built for commercial stations, transport yards and mines where large tanks need filling fast. A YB vane pump and 2-inch LC flow meter deliver up to 200 L/min while holding accuracy to ±0.3%.\n\nThe aluminium cabinet is robust and corrosion-resistant, and the unit runs on a 380 V, 5.5 kW supply.",
+  "features": "Up to 200 L/min flow rate\nYB vane pump with 2-inch LC meter\nAccuracy ±0.3%\n380 V, 5.5 kW\nAluminium cabinet\n2-year warranty",
+  "image": "",
+  "is_featured": false
+ }
+},
+{
+ "model": "core.product",
+ "pk": 18,
+ "fields": {
+  "order": 17,
+  "is_active": true,
+  "category": 1,
+  "name": "LPG dispenser with Coriolis mass flow meter",
+  "slug": "lpg-dispenser",
+  "brand": "Ecotec",
+  "summary": "ATEX-certified autogas dispenser with mass flow metering for LPG stations.",
+  "description": "A dedicated LPG (autogas) dispenser for stations adding gas to their offer. A Coriolis mass flow meter measures accurately regardless of temperature, and the unit is rated to 2 MPa working pressure.\n\nIt delivers up to 45 L/min, operates from -40 °C to +55 °C and draws under 100 W.",
+  "features": "Coriolis mass flow meter\nUp to 45 L/min\nRated working pressure 2 MPa\nOperating range -40 °C to +55 °C\nATEX certified\nLow power, under 100 W",
+  "image": "",
+  "is_featured": false
+ }
+},
+{
+ "model": "core.product",
+ "pk": 19,
+ "fields": {
+  "order": 18,
+  "is_active": true,
+  "category": 1,
+  "name": "AdBlue (urea) dispenser, stainless steel",
+  "slug": "adblue-dispenser",
+  "brand": "Ecotec",
+  "summary": "Stainless-steel DEF dispenser for stations serving modern diesel trucks and buses.",
+  "description": "A stainless-steel dispenser for diesel exhaust fluid (AdBlue / urea), which modern Euro 5 and Euro 6 trucks need. Stainless construction resists the corrosive fluid and keeps it uncontaminated.\n\nIt delivers 50 L/min with ±0.3% accuracy from a compact 64 x 48 x 148 cm cabinet.",
+  "features": "Stainless-steel construction\n50 L/min flow rate\nAccuracy ±0.3%\n220 V, 0.75 kW\nCompact 64 x 48 x 148 cm cabinet\n2-year warranty",
+  "image": "",
+  "is_featured": false
+ }
+},
+{
+ "model": "core.product",
+ "pk": 20,
+ "fields": {
+  "order": 19,
+  "is_active": true,
+  "category": 2,
+  "name": "40 ft container fuel station (68,000 L)",
+  "slug": "container-station-40ft",
+  "brand": "Ecotec",
+  "summary": "A complete fuel station inside a 40 ft container: double-wall tank and dispenser.",
+  "description": "A full-scale fuel station built into a 40 ft container, with a double-walled 6 mm carbon-steel tank and integrated dispensing. It can be delivered, placed and commissioned far faster than a conventional forecourt build.\n\nIdeal for remote sites, mining camps, construction projects and new markets where speed matters.",
+  "features": "68,000 L capacity\nDouble-wall carbon steel, 6 mm\nIntegrated fuel dispenser\nShips as a standard 40 ft container\nRapid deployment for remote sites",
+  "image": "",
+  "is_featured": false
+ }
+},
+{
+ "model": "core.product",
+ "pk": 21,
+ "fields": {
+  "order": 20,
+  "is_active": true,
+  "category": 2,
+  "name": "Portable diesel dispensing tank (400 L)",
+  "slug": "portable-diesel-tank",
+  "brand": "Ecotec",
+  "summary": "HDPE tank with 12 V pump, 4 m hose and automatic nozzle for workshops and farms.",
+  "description": "A self-contained 400-litre HDPE tank with built-in 12 V pump, 4-metre delivery hose and automatic nozzle. It brings diesel to generators, machinery and vehicles on farms, workshops and building sites.\n\nThe safe fill level is 380 L, and the tough HDPE body will not rust.",
+  "features": "400 L HDPE tank (380 L safe fill)\n12 V electric pump\n4 m hose with automatic nozzle\nRust-free, lightweight construction\nFor farms, workshops and sites",
+  "image": "",
+  "is_featured": false
+ }
+},
+{
+ "model": "core.product",
+ "pk": 22,
+ "fields": {
+  "order": 21,
+  "is_active": true,
+  "category": 3,
+  "name": "ATG tank probe system (wired)",
+  "slug": "atg-tank-probe-system",
+  "brand": "Ecotec",
+  "summary": "Stainless-steel magnetostrictive probes and console for continuous tank monitoring.",
+  "description": "A wired automatic tank gauging system with stainless-steel magnetostrictive probes and a console. It continuously reports fuel level, water at the tank bottom and temperature for each tank.\n\nA dependable choice for new builds where cabling can be laid during construction, and for sites replacing manual dipping.",
+  "features": "Stainless-steel magnetostrictive probes\nFuel level, water and temperature\nConsole with alarms and reports\nReplaces manual dipping\nISO 9001 certified manufacturer",
+  "image": "",
+  "is_featured": false
+ }
+},
+{
+ "model": "core.product",
+ "pk": 23,
+ "fields": {
+  "order": 22,
+  "is_active": true,
+  "category": 4,
+  "name": "2-inch MC flow meter with IC card preset",
+  "slug": "mc-flow-meter",
+  "brand": "Ecotec",
+  "summary": "Positive-displacement meter, 55 to 250 L/min, accurate to ±0.2%, with card control.",
+  "description": "A 2-inch positive-displacement flow meter for bulk delivery, tanker loading and fleet fuelling points. An IC card function lets authorised users preset and record each fill.\n\nIt measures 55 to 250 L/min with ±0.2% accuracy and repeatability of 0.07% or better, and reads in litres or gallons.",
+  "features": "2-inch connections\nFlow range 55 to 250 L/min\nAccuracy ±0.2%, repeatability 0.07% or better\nIC card preset and authorisation\nLitres, US or imperial gallons\nMax pressure 10 bar",
+  "image": "",
+  "is_featured": false
+ }
+},
+{
+ "model": "core.product",
+ "pk": 24,
+ "fields": {
+  "order": 23,
+  "is_active": true,
+  "category": 5,
+  "name": "Mini diesel transfer pump (12 / 24 V)",
+  "slug": "mini-transfer-pump",
+  "brand": "Ecotec",
+  "summary": "Compact gear pump moving 20 to 40 L/min from drums, tanks and bowsers.",
+  "description": "A compact gear pump set for transferring diesel and kerosene from drums, skid tanks and bowsers. 12 V and 24 V versions run straight from a vehicle battery, with mains versions also available.\n\nIt moves 20 to 40 L/min at up to 3 bar.",
+  "features": "12 V / 24 V DC or mains versions\nFlow 20 to 40 L/min\nMax operating pressure 3 bar\nFor diesel and kerosene\n12-month warranty",
+  "image": "",
+  "is_featured": false
+ }
+},
+{
+ "model": "core.product",
+ "pk": 25,
+ "fields": {
+  "order": 24,
+  "is_active": true,
+  "category": 6,
+  "name": "Dispenser fuel filter (30 micron)",
+  "slug": "dispenser-fuel-filter",
+  "brand": "Ecotec",
+  "summary": "Particulate filter that protects meters and customers' engines from dirt and debris.",
+  "description": "A replacement 30-micron particulate filter for fuel dispensers. It traps dirt and debris before they reach the meter or the customer's tank, protecting accuracy and engines alike.\n\nRated at 25 GPM with a 1-inch 12 UNF thread, and interchangeable with common 300-10 and 70010 filter models.",
+  "features": "30-micron particulate filtration\n1 in. - 12 UNF thread\nFlow rating 25 GPM\nCellulose element\nInterchangeable with 300-10 and 70010 types",
+  "image": "",
+  "is_featured": false
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 1,
+ "fields": {
+  "product": 2,
+  "image": "products/gallery/high-flow-diesel-dispenser-1.jpg",
+  "caption": "Dual-product fuel dispenser, front view",
+  "order": 1
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 2,
+ "fields": {
+  "product": 2,
+  "image": "products/gallery/high-flow-diesel-dispenser-2.jpg",
+  "caption": "Dispenser range: display, hydraulics and cabinet styles",
+  "order": 2
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 3,
+ "fields": {
+  "product": 2,
+  "image": "products/gallery/high-flow-diesel-dispenser-3.jpg",
+  "caption": "Dispenser front with dual nozzles",
+  "order": 3
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 4,
+ "fields": {
+  "product": 2,
+  "image": "products/gallery/high-flow-diesel-dispenser-4.jpg",
+  "caption": "Dispenser side profile with hose management",
+  "order": 4
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 5,
+ "fields": {
+  "product": 2,
+  "image": "products/gallery/high-flow-diesel-dispenser-5.jpg",
+  "caption": "Dispenser detail",
+  "order": 5
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 6,
+ "fields": {
+  "product": 2,
+  "image": "products/gallery/high-flow-diesel-dispenser-6.jpg",
+  "caption": "Control board and electrical cabinet",
+  "order": 6
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 86,
+ "fields": {
+  "product": 1,
+  "image": "products/gallery/multi-product-retail-dispenser-1.jpg",
+  "caption": "Six-nozzle submersible fuel dispenser, photo 1",
+  "order": 1
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 87,
+ "fields": {
+  "product": 1,
+  "image": "products/gallery/multi-product-retail-dispenser-2.jpg",
+  "caption": "Six-nozzle submersible fuel dispenser, photo 2",
+  "order": 2
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 88,
+ "fields": {
+  "product": 1,
+  "image": "products/gallery/multi-product-retail-dispenser-3.jpg",
+  "caption": "Six-nozzle submersible fuel dispenser, photo 3",
+  "order": 3
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 89,
+ "fields": {
+  "product": 1,
+  "image": "products/gallery/multi-product-retail-dispenser-4.jpg",
+  "caption": "Six-nozzle submersible fuel dispenser, photo 4",
+  "order": 4
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 90,
+ "fields": {
+  "product": 1,
+  "image": "products/gallery/multi-product-retail-dispenser-5.jpg",
+  "caption": "Six-nozzle submersible fuel dispenser, photo 5",
+  "order": 5
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 91,
+ "fields": {
+  "product": 1,
+  "image": "products/gallery/multi-product-retail-dispenser-6.jpg",
+  "caption": "Six-nozzle submersible fuel dispenser, photo 6",
+  "order": 6
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 92,
+ "fields": {
+  "product": 3,
+  "image": "products/gallery/mobile-fuel-dispenser-1.jpg",
+  "caption": "Mobile fuel dispenser (M111), photo 1",
+  "order": 1
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 93,
+ "fields": {
+  "product": 3,
+  "image": "products/gallery/mobile-fuel-dispenser-2.jpg",
+  "caption": "Mobile fuel dispenser (M111), photo 2",
+  "order": 2
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 94,
+ "fields": {
+  "product": 3,
+  "image": "products/gallery/mobile-fuel-dispenser-3.jpg",
+  "caption": "Mobile fuel dispenser (M111), photo 3",
+  "order": 3
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 95,
+ "fields": {
+  "product": 3,
+  "image": "products/gallery/mobile-fuel-dispenser-4.jpg",
+  "caption": "Mobile fuel dispenser (M111), photo 4",
+  "order": 4
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 96,
+ "fields": {
+  "product": 3,
+  "image": "products/gallery/mobile-fuel-dispenser-5.jpg",
+  "caption": "Mobile fuel dispenser (M111), photo 5",
+  "order": 5
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 97,
+ "fields": {
+  "product": 3,
+  "image": "products/gallery/mobile-fuel-dispenser-6.jpg",
+  "caption": "Mobile fuel dispenser (M111), photo 6",
+  "order": 6
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 98,
+ "fields": {
+  "product": 4,
+  "image": "products/gallery/double-wall-underground-tank-1.jpg",
+  "caption": "Double-walled underground storage tank, photo 1",
+  "order": 1
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 99,
+ "fields": {
+  "product": 4,
+  "image": "products/gallery/double-wall-underground-tank-2.png",
+  "caption": "Double-walled underground storage tank, photo 2",
+  "order": 2
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 100,
+ "fields": {
+  "product": 4,
+  "image": "products/gallery/double-wall-underground-tank-3.jpg",
+  "caption": "Double-walled underground storage tank, photo 3",
+  "order": 3
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 101,
+ "fields": {
+  "product": 4,
+  "image": "products/gallery/double-wall-underground-tank-4.jpg",
+  "caption": "Double-walled underground storage tank, photo 4",
+  "order": 4
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 102,
+ "fields": {
+  "product": 4,
+  "image": "products/gallery/double-wall-underground-tank-5.jpg",
+  "caption": "Double-walled underground storage tank, photo 5",
+  "order": 5
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 103,
+ "fields": {
+  "product": 4,
+  "image": "products/gallery/double-wall-underground-tank-6.jpg",
+  "caption": "Double-walled underground storage tank, photo 6",
+  "order": 6
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 104,
+ "fields": {
+  "product": 5,
+  "image": "products/gallery/fuel-cube-container-station-1.jpg",
+  "caption": "Fuel cube container station (5,000 L), photo 1",
+  "order": 1
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 105,
+ "fields": {
+  "product": 6,
+  "image": "products/gallery/automatic-tank-gauge-atg-1.jpg",
+  "caption": "Automatic tank gauge with wireless probes (ATG), photo 1",
+  "order": 1
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 106,
+ "fields": {
+  "product": 6,
+  "image": "products/gallery/automatic-tank-gauge-atg-2.jpg",
+  "caption": "Automatic tank gauge with wireless probes (ATG), photo 2",
+  "order": 2
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 107,
+ "fields": {
+  "product": 6,
+  "image": "products/gallery/automatic-tank-gauge-atg-3.jpg",
+  "caption": "Automatic tank gauge with wireless probes (ATG), photo 3",
+  "order": 3
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 108,
+ "fields": {
+  "product": 6,
+  "image": "products/gallery/automatic-tank-gauge-atg-4.jpg",
+  "caption": "Automatic tank gauge with wireless probes (ATG), photo 4",
+  "order": 4
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 109,
+ "fields": {
+  "product": 6,
+  "image": "products/gallery/automatic-tank-gauge-atg-5.jpg",
+  "caption": "Automatic tank gauge with wireless probes (ATG), photo 5",
+  "order": 5
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 110,
+ "fields": {
+  "product": 6,
+  "image": "products/gallery/automatic-tank-gauge-atg-6.jpg",
+  "caption": "Automatic tank gauge with wireless probes (ATG), photo 6",
+  "order": 6
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 111,
+ "fields": {
+  "product": 7,
+  "image": "products/gallery/pts-station-management-system-1.jpg",
+  "caption": "PTS controller and station management system, photo 1",
+  "order": 1
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 112,
+ "fields": {
+  "product": 7,
+  "image": "products/gallery/pts-station-management-system-2.jpg",
+  "caption": "PTS controller and station management system, photo 2",
+  "order": 2
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 113,
+ "fields": {
+  "product": 7,
+  "image": "products/gallery/pts-station-management-system-3.jpg",
+  "caption": "PTS controller and station management system, photo 3",
+  "order": 3
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 114,
+ "fields": {
+  "product": 7,
+  "image": "products/gallery/pts-station-management-system-4.jpg",
+  "caption": "PTS controller and station management system, photo 4",
+  "order": 4
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 115,
+ "fields": {
+  "product": 7,
+  "image": "products/gallery/pts-station-management-system-5.jpg",
+  "caption": "PTS controller and station management system, photo 5",
+  "order": 5
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 116,
+ "fields": {
+  "product": 7,
+  "image": "products/gallery/pts-station-management-system-6.jpg",
+  "caption": "PTS controller and station management system, photo 6",
+  "order": 6
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 117,
+ "fields": {
+  "product": 9,
+  "image": "products/gallery/electronic-discharging-meter-skid-1.jpg",
+  "caption": "Electronic discharging meter skid (250 L/min), photo 1",
+  "order": 1
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 118,
+ "fields": {
+  "product": 9,
+  "image": "products/gallery/electronic-discharging-meter-skid-2.jpg",
+  "caption": "Electronic discharging meter skid (250 L/min), photo 2",
+  "order": 2
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 119,
+ "fields": {
+  "product": 9,
+  "image": "products/gallery/electronic-discharging-meter-skid-3.jpg",
+  "caption": "Electronic discharging meter skid (250 L/min), photo 3",
+  "order": 3
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 120,
+ "fields": {
+  "product": 9,
+  "image": "products/gallery/electronic-discharging-meter-skid-4.jpg",
+  "caption": "Electronic discharging meter skid (250 L/min), photo 4",
+  "order": 4
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 121,
+ "fields": {
+  "product": 9,
+  "image": "products/gallery/electronic-discharging-meter-skid-5.jpg",
+  "caption": "Electronic discharging meter skid (250 L/min), photo 5",
+  "order": 5
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 122,
+ "fields": {
+  "product": 9,
+  "image": "products/gallery/electronic-discharging-meter-skid-6.jpg",
+  "caption": "Electronic discharging meter skid (250 L/min), photo 6",
+  "order": 6
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 123,
+ "fields": {
+  "product": 8,
+  "image": "products/gallery/tank-truck-discharging-meter-1.jpg",
+  "caption": "3-inch tank truck discharging meter, photo 1",
+  "order": 1
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 124,
+ "fields": {
+  "product": 8,
+  "image": "products/gallery/tank-truck-discharging-meter-2.jpg",
+  "caption": "3-inch tank truck discharging meter, photo 2",
+  "order": 2
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 125,
+ "fields": {
+  "product": 8,
+  "image": "products/gallery/tank-truck-discharging-meter-3.jpg",
+  "caption": "3-inch tank truck discharging meter, photo 3",
+  "order": 3
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 126,
+ "fields": {
+  "product": 8,
+  "image": "products/gallery/tank-truck-discharging-meter-4.jpg",
+  "caption": "3-inch tank truck discharging meter, photo 4",
+  "order": 4
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 127,
+ "fields": {
+  "product": 8,
+  "image": "products/gallery/tank-truck-discharging-meter-5.jpg",
+  "caption": "3-inch tank truck discharging meter, photo 5",
+  "order": 5
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 128,
+ "fields": {
+  "product": 8,
+  "image": "products/gallery/tank-truck-discharging-meter-6.jpg",
+  "caption": "3-inch tank truck discharging meter, photo 6",
+  "order": 6
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 129,
+ "fields": {
+  "product": 10,
+  "image": "products/gallery/submersible-turbine-pump-1.jpg",
+  "caption": "ATEX submersible turbine pump (1 to 2 HP), photo 1",
+  "order": 1
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 130,
+ "fields": {
+  "product": 10,
+  "image": "products/gallery/submersible-turbine-pump-2.jpg",
+  "caption": "ATEX submersible turbine pump (1 to 2 HP), photo 2",
+  "order": 2
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 131,
+ "fields": {
+  "product": 10,
+  "image": "products/gallery/submersible-turbine-pump-3.jpg",
+  "caption": "ATEX submersible turbine pump (1 to 2 HP), photo 3",
+  "order": 3
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 132,
+ "fields": {
+  "product": 10,
+  "image": "products/gallery/submersible-turbine-pump-4.jpg",
+  "caption": "ATEX submersible turbine pump (1 to 2 HP), photo 4",
+  "order": 4
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 133,
+ "fields": {
+  "product": 10,
+  "image": "products/gallery/submersible-turbine-pump-5.jpg",
+  "caption": "ATEX submersible turbine pump (1 to 2 HP), photo 5",
+  "order": 5
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 134,
+ "fields": {
+  "product": 10,
+  "image": "products/gallery/submersible-turbine-pump-6.jpg",
+  "caption": "ATEX submersible turbine pump (1 to 2 HP), photo 6",
+  "order": 6
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 135,
+ "fields": {
+  "product": 11,
+  "image": "products/gallery/underground-petroleum-pipe-1.jpg",
+  "caption": "HDPE underground petroleum pipe (UPP), photo 1",
+  "order": 1
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 136,
+ "fields": {
+  "product": 11,
+  "image": "products/gallery/underground-petroleum-pipe-2.jpg",
+  "caption": "HDPE underground petroleum pipe (UPP), photo 2",
+  "order": 2
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 137,
+ "fields": {
+  "product": 11,
+  "image": "products/gallery/underground-petroleum-pipe-3.jpg",
+  "caption": "HDPE underground petroleum pipe (UPP), photo 3",
+  "order": 3
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 138,
+ "fields": {
+  "product": 11,
+  "image": "products/gallery/underground-petroleum-pipe-4.png",
+  "caption": "HDPE underground petroleum pipe (UPP), photo 4",
+  "order": 4
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 139,
+ "fields": {
+  "product": 11,
+  "image": "products/gallery/underground-petroleum-pipe-5.jpg",
+  "caption": "HDPE underground petroleum pipe (UPP), photo 5",
+  "order": 5
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 140,
+ "fields": {
+  "product": 11,
+  "image": "products/gallery/underground-petroleum-pipe-6.jpg",
+  "caption": "HDPE underground petroleum pipe (UPP), photo 6",
+  "order": 6
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 141,
+ "fields": {
+  "product": 14,
+  "image": "products/gallery/rotary-vane-transfer-pump-1.png",
+  "caption": "YB-80 rotary vane transfer pump (3-inch), photo 1",
+  "order": 1
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 142,
+ "fields": {
+  "product": 14,
+  "image": "products/gallery/rotary-vane-transfer-pump-2.jpg",
+  "caption": "YB-80 rotary vane transfer pump (3-inch), photo 2",
+  "order": 2
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 143,
+ "fields": {
+  "product": 14,
+  "image": "products/gallery/rotary-vane-transfer-pump-3.png",
+  "caption": "YB-80 rotary vane transfer pump (3-inch), photo 3",
+  "order": 3
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 144,
+ "fields": {
+  "product": 14,
+  "image": "products/gallery/rotary-vane-transfer-pump-4.jpg",
+  "caption": "YB-80 rotary vane transfer pump (3-inch), photo 4",
+  "order": 4
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 145,
+ "fields": {
+  "product": 14,
+  "image": "products/gallery/rotary-vane-transfer-pump-5.jpg",
+  "caption": "YB-80 rotary vane transfer pump (3-inch), photo 5",
+  "order": 5
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 146,
+ "fields": {
+  "product": 14,
+  "image": "products/gallery/rotary-vane-transfer-pump-6.png",
+  "caption": "YB-80 rotary vane transfer pump (3-inch), photo 6",
+  "order": 6
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 147,
+ "fields": {
+  "product": 12,
+  "image": "products/gallery/automatic-fuel-nozzle-1.jpg",
+  "caption": "High-flow automatic fuel nozzle, photo 1",
+  "order": 1
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 148,
+ "fields": {
+  "product": 12,
+  "image": "products/gallery/automatic-fuel-nozzle-2.jpg",
+  "caption": "High-flow automatic fuel nozzle, photo 2",
+  "order": 2
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 149,
+ "fields": {
+  "product": 12,
+  "image": "products/gallery/automatic-fuel-nozzle-3.jpg",
+  "caption": "High-flow automatic fuel nozzle, photo 3",
+  "order": 3
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 150,
+ "fields": {
+  "product": 12,
+  "image": "products/gallery/automatic-fuel-nozzle-4.jpg",
+  "caption": "High-flow automatic fuel nozzle, photo 4",
+  "order": 4
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 151,
+ "fields": {
+  "product": 12,
+  "image": "products/gallery/automatic-fuel-nozzle-5.jpg",
+  "caption": "High-flow automatic fuel nozzle, photo 5",
+  "order": 5
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 152,
+ "fields": {
+  "product": 12,
+  "image": "products/gallery/automatic-fuel-nozzle-6.jpg",
+  "caption": "High-flow automatic fuel nozzle, photo 6",
+  "order": 6
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 153,
+ "fields": {
+  "product": 15,
+  "image": "products/gallery/breakaway-valve-1.jpg",
+  "caption": "1-inch safety breakaway valve, photo 1",
+  "order": 1
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 154,
+ "fields": {
+  "product": 15,
+  "image": "products/gallery/breakaway-valve-2.jpg",
+  "caption": "1-inch safety breakaway valve, photo 2",
+  "order": 2
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 155,
+ "fields": {
+  "product": 15,
+  "image": "products/gallery/breakaway-valve-3.jpg",
+  "caption": "1-inch safety breakaway valve, photo 3",
+  "order": 3
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 156,
+ "fields": {
+  "product": 15,
+  "image": "products/gallery/breakaway-valve-4.jpg",
+  "caption": "1-inch safety breakaway valve, photo 4",
+  "order": 4
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 157,
+ "fields": {
+  "product": 15,
+  "image": "products/gallery/breakaway-valve-5.jpg",
+  "caption": "1-inch safety breakaway valve, photo 5",
+  "order": 5
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 158,
+ "fields": {
+  "product": 15,
+  "image": "products/gallery/breakaway-valve-6.jpg",
+  "caption": "1-inch safety breakaway valve, photo 6",
+  "order": 6
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 159,
+ "fields": {
+  "product": 13,
+  "image": "products/gallery/tank-manhole-cover-1.jpg",
+  "caption": "Tank manhole and cover (16 or 20-inch), photo 1",
+  "order": 1
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 160,
+ "fields": {
+  "product": 13,
+  "image": "products/gallery/tank-manhole-cover-2.jpg",
+  "caption": "Tank manhole and cover (16 or 20-inch), photo 2",
+  "order": 2
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 161,
+ "fields": {
+  "product": 13,
+  "image": "products/gallery/tank-manhole-cover-3.jpg",
+  "caption": "Tank manhole and cover (16 or 20-inch), photo 3",
+  "order": 3
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 162,
+ "fields": {
+  "product": 13,
+  "image": "products/gallery/tank-manhole-cover-4.jpg",
+  "caption": "Tank manhole and cover (16 or 20-inch), photo 4",
+  "order": 4
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 163,
+ "fields": {
+  "product": 13,
+  "image": "products/gallery/tank-manhole-cover-5.jpg",
+  "caption": "Tank manhole and cover (16 or 20-inch), photo 5",
+  "order": 5
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 164,
+ "fields": {
+  "product": 13,
+  "image": "products/gallery/tank-manhole-cover-6.jpg",
+  "caption": "Tank manhole and cover (16 or 20-inch), photo 6",
+  "order": 6
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 165,
+ "fields": {
+  "product": 16,
+  "image": "products/gallery/smart-fuel-dispenser-1.png",
+  "caption": "Smart fuel dispenser with large display, photo 1",
+  "order": 1
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 166,
+ "fields": {
+  "product": 16,
+  "image": "products/gallery/smart-fuel-dispenser-2.jpg",
+  "caption": "Smart fuel dispenser with large display, photo 2",
+  "order": 2
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 167,
+ "fields": {
+  "product": 16,
+  "image": "products/gallery/smart-fuel-dispenser-3.jpg",
+  "caption": "Smart fuel dispenser with large display, photo 3",
+  "order": 3
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 168,
+ "fields": {
+  "product": 16,
+  "image": "products/gallery/smart-fuel-dispenser-4.jpg",
+  "caption": "Smart fuel dispenser with large display, photo 4",
+  "order": 4
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 169,
+ "fields": {
+  "product": 16,
+  "image": "products/gallery/smart-fuel-dispenser-5.jpg",
+  "caption": "Smart fuel dispenser with large display, photo 5",
+  "order": 5
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 170,
+ "fields": {
+  "product": 16,
+  "image": "products/gallery/smart-fuel-dispenser-6.jpg",
+  "caption": "Smart fuel dispenser with large display, photo 6",
+  "order": 6
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 171,
+ "fields": {
+  "product": 17,
+  "image": "products/gallery/heavy-duty-truck-dispenser-1.jpg",
+  "caption": "Heavy-duty truck dispenser (200 L/min), photo 1",
+  "order": 1
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 172,
+ "fields": {
+  "product": 17,
+  "image": "products/gallery/heavy-duty-truck-dispenser-2.jpg",
+  "caption": "Heavy-duty truck dispenser (200 L/min), photo 2",
+  "order": 2
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 173,
+ "fields": {
+  "product": 17,
+  "image": "products/gallery/heavy-duty-truck-dispenser-3.jpg",
+  "caption": "Heavy-duty truck dispenser (200 L/min), photo 3",
+  "order": 3
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 174,
+ "fields": {
+  "product": 17,
+  "image": "products/gallery/heavy-duty-truck-dispenser-4.jpg",
+  "caption": "Heavy-duty truck dispenser (200 L/min), photo 4",
+  "order": 4
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 175,
+ "fields": {
+  "product": 17,
+  "image": "products/gallery/heavy-duty-truck-dispenser-5.jpg",
+  "caption": "Heavy-duty truck dispenser (200 L/min), photo 5",
+  "order": 5
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 176,
+ "fields": {
+  "product": 17,
+  "image": "products/gallery/heavy-duty-truck-dispenser-6.jpg",
+  "caption": "Heavy-duty truck dispenser (200 L/min), photo 6",
+  "order": 6
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 177,
+ "fields": {
+  "product": 18,
+  "image": "products/gallery/lpg-dispenser-1.jpg",
+  "caption": "LPG dispenser with Coriolis mass flow meter, photo 1",
+  "order": 1
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 178,
+ "fields": {
+  "product": 18,
+  "image": "products/gallery/lpg-dispenser-2.jpg",
+  "caption": "LPG dispenser with Coriolis mass flow meter, photo 2",
+  "order": 2
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 179,
+ "fields": {
+  "product": 18,
+  "image": "products/gallery/lpg-dispenser-3.jpg",
+  "caption": "LPG dispenser with Coriolis mass flow meter, photo 3",
+  "order": 3
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 180,
+ "fields": {
+  "product": 18,
+  "image": "products/gallery/lpg-dispenser-4.jpg",
+  "caption": "LPG dispenser with Coriolis mass flow meter, photo 4",
+  "order": 4
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 181,
+ "fields": {
+  "product": 18,
+  "image": "products/gallery/lpg-dispenser-5.jpg",
+  "caption": "LPG dispenser with Coriolis mass flow meter, photo 5",
+  "order": 5
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 182,
+ "fields": {
+  "product": 18,
+  "image": "products/gallery/lpg-dispenser-6.jpg",
+  "caption": "LPG dispenser with Coriolis mass flow meter, photo 6",
+  "order": 6
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 183,
+ "fields": {
+  "product": 19,
+  "image": "products/gallery/adblue-dispenser-1.jpg",
+  "caption": "AdBlue (urea) dispenser, stainless steel, photo 1",
+  "order": 1
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 184,
+ "fields": {
+  "product": 19,
+  "image": "products/gallery/adblue-dispenser-2.jpg",
+  "caption": "AdBlue (urea) dispenser, stainless steel, photo 2",
+  "order": 2
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 185,
+ "fields": {
+  "product": 19,
+  "image": "products/gallery/adblue-dispenser-3.jpg",
+  "caption": "AdBlue (urea) dispenser, stainless steel, photo 3",
+  "order": 3
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 186,
+ "fields": {
+  "product": 19,
+  "image": "products/gallery/adblue-dispenser-4.jpg",
+  "caption": "AdBlue (urea) dispenser, stainless steel, photo 4",
+  "order": 4
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 187,
+ "fields": {
+  "product": 19,
+  "image": "products/gallery/adblue-dispenser-5.jpg",
+  "caption": "AdBlue (urea) dispenser, stainless steel, photo 5",
+  "order": 5
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 188,
+ "fields": {
+  "product": 19,
+  "image": "products/gallery/adblue-dispenser-6.jpg",
+  "caption": "AdBlue (urea) dispenser, stainless steel, photo 6",
+  "order": 6
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 189,
+ "fields": {
+  "product": 20,
+  "image": "products/gallery/container-station-40ft-1.jpg",
+  "caption": "40 ft container fuel station (68,000 L), photo 1",
+  "order": 1
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 190,
+ "fields": {
+  "product": 20,
+  "image": "products/gallery/container-station-40ft-2.jpg",
+  "caption": "40 ft container fuel station (68,000 L), photo 2",
+  "order": 2
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 191,
+ "fields": {
+  "product": 21,
+  "image": "products/gallery/portable-diesel-tank-1.png",
+  "caption": "Portable diesel dispensing tank (400 L), photo 1",
+  "order": 1
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 192,
+ "fields": {
+  "product": 21,
+  "image": "products/gallery/portable-diesel-tank-2.png",
+  "caption": "Portable diesel dispensing tank (400 L), photo 2",
+  "order": 2
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 193,
+ "fields": {
+  "product": 21,
+  "image": "products/gallery/portable-diesel-tank-3.png",
+  "caption": "Portable diesel dispensing tank (400 L), photo 3",
+  "order": 3
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 194,
+ "fields": {
+  "product": 21,
+  "image": "products/gallery/portable-diesel-tank-4.png",
+  "caption": "Portable diesel dispensing tank (400 L), photo 4",
+  "order": 4
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 195,
+ "fields": {
+  "product": 21,
+  "image": "products/gallery/portable-diesel-tank-5.png",
+  "caption": "Portable diesel dispensing tank (400 L), photo 5",
+  "order": 5
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 196,
+ "fields": {
+  "product": 21,
+  "image": "products/gallery/portable-diesel-tank-6.png",
+  "caption": "Portable diesel dispensing tank (400 L), photo 6",
+  "order": 6
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 197,
+ "fields": {
+  "product": 22,
+  "image": "products/gallery/atg-tank-probe-system-1.jpg",
+  "caption": "ATG tank probe system (wired), photo 1",
+  "order": 1
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 198,
+ "fields": {
+  "product": 22,
+  "image": "products/gallery/atg-tank-probe-system-2.jpg",
+  "caption": "ATG tank probe system (wired), photo 2",
+  "order": 2
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 199,
+ "fields": {
+  "product": 22,
+  "image": "products/gallery/atg-tank-probe-system-3.jpg",
+  "caption": "ATG tank probe system (wired), photo 3",
+  "order": 3
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 200,
+ "fields": {
+  "product": 22,
+  "image": "products/gallery/atg-tank-probe-system-4.jpg",
+  "caption": "ATG tank probe system (wired), photo 4",
+  "order": 4
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 201,
+ "fields": {
+  "product": 22,
+  "image": "products/gallery/atg-tank-probe-system-5.jpg",
+  "caption": "ATG tank probe system (wired), photo 5",
+  "order": 5
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 202,
+ "fields": {
+  "product": 22,
+  "image": "products/gallery/atg-tank-probe-system-6.png",
+  "caption": "ATG tank probe system (wired), photo 6",
+  "order": 6
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 203,
+ "fields": {
+  "product": 23,
+  "image": "products/gallery/mc-flow-meter-1.png",
+  "caption": "2-inch MC flow meter with IC card preset, photo 1",
+  "order": 1
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 204,
+ "fields": {
+  "product": 23,
+  "image": "products/gallery/mc-flow-meter-2.jpg",
+  "caption": "2-inch MC flow meter with IC card preset, photo 2",
+  "order": 2
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 205,
+ "fields": {
+  "product": 23,
+  "image": "products/gallery/mc-flow-meter-3.jpg",
+  "caption": "2-inch MC flow meter with IC card preset, photo 3",
+  "order": 3
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 206,
+ "fields": {
+  "product": 23,
+  "image": "products/gallery/mc-flow-meter-4.jpg",
+  "caption": "2-inch MC flow meter with IC card preset, photo 4",
+  "order": 4
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 207,
+ "fields": {
+  "product": 23,
+  "image": "products/gallery/mc-flow-meter-5.jpg",
+  "caption": "2-inch MC flow meter with IC card preset, photo 5",
+  "order": 5
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 208,
+ "fields": {
+  "product": 23,
+  "image": "products/gallery/mc-flow-meter-6.jpg",
+  "caption": "2-inch MC flow meter with IC card preset, photo 6",
+  "order": 6
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 209,
+ "fields": {
+  "product": 24,
+  "image": "products/gallery/mini-transfer-pump-1.jpg",
+  "caption": "Mini diesel transfer pump (12 / 24 V), photo 1",
+  "order": 1
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 210,
+ "fields": {
+  "product": 24,
+  "image": "products/gallery/mini-transfer-pump-2.jpg",
+  "caption": "Mini diesel transfer pump (12 / 24 V), photo 2",
+  "order": 2
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 211,
+ "fields": {
+  "product": 24,
+  "image": "products/gallery/mini-transfer-pump-3.jpg",
+  "caption": "Mini diesel transfer pump (12 / 24 V), photo 3",
+  "order": 3
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 212,
+ "fields": {
+  "product": 24,
+  "image": "products/gallery/mini-transfer-pump-4.jpg",
+  "caption": "Mini diesel transfer pump (12 / 24 V), photo 4",
+  "order": 4
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 213,
+ "fields": {
+  "product": 24,
+  "image": "products/gallery/mini-transfer-pump-5.jpg",
+  "caption": "Mini diesel transfer pump (12 / 24 V), photo 5",
+  "order": 5
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 214,
+ "fields": {
+  "product": 24,
+  "image": "products/gallery/mini-transfer-pump-6.jpg",
+  "caption": "Mini diesel transfer pump (12 / 24 V), photo 6",
+  "order": 6
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 215,
+ "fields": {
+  "product": 25,
+  "image": "products/gallery/dispenser-fuel-filter-1.jpg",
+  "caption": "Dispenser fuel filter (30 micron), photo 1",
+  "order": 1
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 216,
+ "fields": {
+  "product": 25,
+  "image": "products/gallery/dispenser-fuel-filter-2.jpg",
+  "caption": "Dispenser fuel filter (30 micron), photo 2",
+  "order": 2
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 217,
+ "fields": {
+  "product": 25,
+  "image": "products/gallery/dispenser-fuel-filter-3.jpg",
+  "caption": "Dispenser fuel filter (30 micron), photo 3",
+  "order": 3
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 218,
+ "fields": {
+  "product": 25,
+  "image": "products/gallery/dispenser-fuel-filter-4.jpg",
+  "caption": "Dispenser fuel filter (30 micron), photo 4",
+  "order": 4
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 219,
+ "fields": {
+  "product": 25,
+  "image": "products/gallery/dispenser-fuel-filter-5.jpg",
+  "caption": "Dispenser fuel filter (30 micron), photo 5",
+  "order": 5
+ }
+},
+{
+ "model": "core.productimage",
+ "pk": 220,
+ "fields": {
+  "product": 25,
+  "image": "products/gallery/dispenser-fuel-filter-6.jpg",
+  "caption": "Dispenser fuel filter (30 micron), photo 6",
+  "order": 6
+ }
+},
+{
+ "model": "core.service",
+ "pk": 1,
+ "fields": {
+  "order": 0,
+  "is_active": true,
+  "name": "Station Design & Construction",
+  "slug": "station-design-construction",
+  "icon": "build",
+  "summary": "Turnkey design and build of new retail fuel stations and depot upgrades.",
+  "description": "We manage the full project — from feasibility, site layout and approvals through civil works, canopy, mechanical and electrical installation to commissioning. One contract, one accountable team.",
+  "deliverables": "Site survey and feasibility\nForecourt layout and engineering drawings\nRegulatory and environmental approvals support\nCivil, canopy and building works\nMechanical and electrical installation\nTesting, commissioning and handover",
+  "image": ""
+ }
+},
+{
+ "model": "core.service",
+ "pk": 2,
+ "fields": {
+  "order": 1,
+  "is_active": true,
+  "name": "Equipment Installation & Commissioning",
+  "slug": "equipment-installation",
+  "icon": "wrench",
+  "summary": "Professional installation of dispensers, tanks, pumps, piping and automation.",
+  "description": "Our certified technicians install and commission petroleum equipment to manufacturer specifications and applicable standards, with pressure testing and full documentation.",
+  "deliverables": "Tank installation and pressure testing\nDispenser and pump installation\nPiping and hazardous-area electrical works\nATG and forecourt controller set-up\nCommissioning reports and as-built drawings",
+  "image": ""
+ }
+},
+{
+ "model": "core.service",
+ "pk": 3,
+ "fields": {
+  "order": 2,
+  "is_active": true,
+  "name": "Maintenance & Repair",
+  "slug": "maintenance-repair",
+  "icon": "clipboard",
+  "summary": "Planned preventive maintenance and 24/7 breakdown support.",
+  "description": "Keep your sites running with scheduled maintenance contracts and fast emergency response. We stock critical spares locally to minimise downtime.",
+  "deliverables": "Preventive maintenance contracts\n24/7 breakdown call-out\nSpare parts supply\nDispenser refurbishment\nService reports and asset records",
+  "image": ""
+ }
+},
+{
+ "model": "core.service",
+ "pk": 4,
+ "fields": {
+  "order": 3,
+  "is_active": true,
+  "name": "Calibration & Verification",
+  "slug": "calibration-verification",
+  "icon": "calibrate",
+  "summary": "Accurate metering through dispenser and meter calibration.",
+  "description": "We calibrate dispensers, flow meters and tank charts using certified measures so every litre sold is accounted for, and prepare sites for weights and measures verification.",
+  "deliverables": "Dispenser calibration with certified provers\nFlow meter calibration\nTank calibration and charting\nPre-verification inspections",
+  "image": ""
+ }
+},
+{
+ "model": "core.service",
+ "pk": 5,
+ "fields": {
+  "order": 4,
+  "is_active": true,
+  "name": "Tank Testing, Cleaning & Integrity",
+  "slug": "tank-testing-cleaning",
+  "icon": "tank",
+  "summary": "Tank and line tightness testing, cleaning and remediation.",
+  "description": "Protect your stock and the environment with periodic tank and line integrity testing, tank cleaning and fuel polishing, and leak investigation.",
+  "deliverables": "Tank and line tightness testing\nTank cleaning and sludge removal\nFuel polishing and water removal\nLeak investigation and repair",
+  "image": ""
+ }
+},
+{
+ "model": "core.service",
+ "pk": 6,
+ "fields": {
+  "order": 5,
+  "is_active": true,
+  "name": "Safety & Compliance Audits",
+  "slug": "safety-compliance",
+  "icon": "shield",
+  "summary": "Inspections and audits to keep facilities safe and compliant.",
+  "description": "Our engineers inspect forecourts and depots against regulatory and industry standards, identify risks and recommend practical corrective actions.",
+  "deliverables": "Site safety and hazardous-area audits\nFire protection system checks\nEnvironmental compliance assessments\nStaff safety awareness training",
+  "image": ""
+ }
+},
+{
+ "model": "core.serviceimage",
+ "pk": 1,
+ "fields": {
+  "service": 1,
+  "image": "services/gallery/station-canopy-construction.jpg",
+  "caption": "Canopy and shop structure under construction",
+  "order": 0
+ }
+},
+{
+ "model": "core.serviceimage",
+ "pk": 2,
+ "fields": {
+  "service": 1,
+  "image": "services/gallery/underground-tank-installation.jpg",
+  "caption": "Lowering a double-wall underground storage tank",
+  "order": 1
+ }
+},
+{
+ "model": "core.serviceimage",
+ "pk": 3,
+ "fields": {
+  "service": 1,
+  "image": "services/gallery/forecourt-tank-sumps.jpg",
+  "caption": "Tank sumps and vent pipes before forecourt paving",
+  "order": 2
+ }
+},
+{
+ "model": "core.serviceimage",
+ "pk": 4,
+ "fields": {
+  "service": 2,
+  "image": "services/gallery/bulk-storage-tank-skid.jpg",
+  "caption": "Skid-mounted bulk storage tank with transfer pump",
+  "order": 0
+ }
+},
+{
+ "model": "core.serviceimage",
+ "pk": 5,
+ "fields": {
+  "service": 2,
+  "image": "services/gallery/fuel-manifold-valves.jpg",
+  "caption": "Labelled product manifold with isolation valves",
+  "order": 1
+ }
+},
+{
+ "model": "core.serviceimage",
+ "pk": 6,
+ "fields": {
+  "service": 2,
+  "image": "services/gallery/transfer-pump-installation.jpg",
+  "caption": "Transfer pumps installed on plinths with pipework",
+  "order": 2
+ }
+},
+{
+ "model": "core.serviceimage",
+ "pk": 7,
+ "fields": {
+  "service": 2,
+  "image": "services/gallery/self-bunded-tank-dispenser.jpg",
+  "caption": "Self-bunded tank with integrated diesel dispenser",
+  "order": 3
+ }
+},
+{
+ "model": "core.serviceimage",
+ "pk": 8,
+ "fields": {
+  "service": 2,
+  "image": "services/gallery/pipework-inspection-at-height.jpg",
+  "caption": "Pipework inspection and commissioning at height",
+  "order": 4
+ }
+},
+{
+ "model": "core.serviceimage",
+ "pk": 9,
+ "fields": {
+  "service": 2,
+  "image": "services/gallery/flow-meter-installation.avif",
+  "caption": "Positive-displacement flow meter installation",
+  "order": 5
+ }
+},
+{
+ "model": "core.serviceimage",
+ "pk": 10,
+ "fields": {
+  "service": 5,
+  "image": "services/gallery/tank-pressure-washing.jpg",
+  "caption": "High-pressure washing of a storage tank interior",
+  "order": 0
+ }
+},
+{
+ "model": "core.serviceimage",
+ "pk": 11,
+ "fields": {
+  "service": 5,
+  "image": "services/gallery/tank-sludge-removal.jpg",
+  "caption": "Sludge and water removal inside an underground tank",
+  "order": 1
+ }
+},
+{
+ "model": "core.serviceimage",
+ "pk": 12,
+ "fields": {
+  "service": 4,
+  "image": "services/gallery/flow-meter-calibration.webp",
+  "caption": "Electronic flow meter set up for calibration",
+  "order": 0
+ }
+},
+{
+ "model": "core.serviceimage",
+ "pk": 13,
+ "fields": {
+  "service": 4,
+  "image": "services/gallery/coriolis-meter-verification.webp",
+  "caption": "Mass flow meter verification on a fuel line",
+  "order": 1
+ }
+},
+{
+ "model": "core.serviceimage",
+ "pk": 14,
+ "fields": {
+  "service": 4,
+  "image": "services/gallery/instrument-calibration-test.jpg",
+  "caption": "Calibrating pressure and test instruments on site",
+  "order": 2
+ }
+},
+{
+ "model": "core.serviceimage",
+ "pk": 15,
+ "fields": {
+  "service": 4,
+  "image": "services/gallery/gas-detector-check.jpg",
+  "caption": "Gas detector bump-test before entry and testing",
+  "order": 3
+ }
+},
+{
+ "model": "core.serviceimage",
+ "pk": 16,
+ "fields": {
+  "service": 6,
+  "image": "services/gallery/site-safety-inspection.webp",
+  "caption": "Engineer carrying out a site safety and compliance inspection",
+  "order": 0
+ }
+},
+{
+ "model": "core.serviceimage",
+ "pk": 17,
+ "fields": {
+  "service": 3,
+  "image": "services/gallery/pump-valve-maintenance.jpg",
+  "caption": "Technician servicing a pump and valve assembly",
+  "order": 0
+ }
+},
+{
+ "model": "core.serviceimage",
+ "pk": 18,
+ "fields": {
+  "service": 3,
+  "image": "services/gallery/plant-repair-at-height.jpg",
+  "caption": "Repair crew working at height with fall protection",
+  "order": 1
+ }
+},
+{
+ "model": "core.serviceimage",
+ "pk": 19,
+ "fields": {
+  "service": 3,
+  "image": "services/gallery/tanker-fleet-servicing.jpg",
+  "caption": "Supporting fuel tanker fleets on the road",
+  "order": 2
+ }
+},
+{
+ "model": "core.sector",
+ "pk": 1,
+ "fields": {
+  "order": 0,
+  "is_active": true,
+  "name": "Retail Fuel Stations",
+  "slug": "retail-fuel-stations",
+  "icon": "station",
+  "summary": "From single independent sites to national networks, we equip and maintain forecourts that are safe, accurate and profitable: new builds, rebrands and upgrades.",
+  "capabilities": "New station design and construction\nDispenser supply and upgrades\nTank automation and leak detection\nForecourt controllers and payments\nPreventive maintenance contracts\nCalibration and verification",
+  "image": "sectors/retail-fuel-stations.jpg"
+ }
+},
+{
+ "model": "core.sector",
+ "pk": 2,
+ "fields": {
+  "order": 2,
+  "is_active": true,
+  "name": "Oil Depots & Terminals",
+  "slug": "terminals-depots",
+  "icon": "terminal",
+  "summary": "Equipment and engineering for bulk fuel terminals and storage depots: receiving, storing, metering and loading product safely and accurately.",
+  "capabilities": "Bulk storage tank works\nTanker unloading and metering skids\nTransfer pumps and pipework\nCustody-transfer metering\nTank gauging and inventory control\nIntegrity testing and maintenance",
+  "image": ""
+ }
+},
+{
+ "model": "core.sector",
+ "pk": 3,
+ "fields": {
+  "order": 3,
+  "is_active": true,
+  "name": "Industrial & Manufacturing",
+  "slug": "industrial-fuel",
+  "icon": "factory",
+  "summary": "Reliable fuel supply infrastructure for factories, processing plants, mines, quarries and construction sites that cannot afford downtime.",
+  "capabilities": "Above-ground and bunded tanks\nOn-site dispensing for plant and machinery\nBoiler and process fuel systems\nTransfer pumps and filtration\nFuel polishing and tank cleaning\nSafety and compliance audits",
+  "image": ""
+ }
+},
+{
+ "model": "core.sector",
+ "pk": 4,
+ "fields": {
+  "order": 1,
+  "is_active": true,
+  "name": "Commercial & Fleet Operations",
+  "slug": "commercial-fleet",
+  "icon": "truck",
+  "summary": "On-site fuelling for transport companies, logistics fleets, bus operators and delivery networks, with the control and reporting needed to stop fuel loss.",
+  "capabilities": "Private fleet fuelling stations\nHigh-flow truck dispensers\nFleet cards, tags and fuel management\nAdBlue (DEF) dispensing\nMobile and skid tanks\nUsage reporting by vehicle and driver",
+  "image": ""
+ }
+},
+{
+ "model": "core.sector",
+ "pk": 5,
+ "fields": {
+  "order": 4,
+  "is_active": true,
+  "name": "Aviation Fuel Infrastructure",
+  "slug": "aviation-fuel",
+  "icon": "plane",
+  "summary": "Support for airports, airstrips and aviation fuel operators: storage, filtration, metering and dispensing equipment built for strict aviation fuel quality standards.",
+  "capabilities": "Aviation fuel storage and handling\nFiltration and water separation\nPrecision metering\nHydrant and bowser equipment support\nQuality and safety inspections\nPlanned maintenance",
+  "image": ""
+ }
+},
+{
+ "model": "core.sector",
+ "pk": 6,
+ "fields": {
+  "order": 5,
+  "is_active": true,
+  "name": "Marine & Port Operations",
+  "slug": "marine-port",
+  "icon": "ship",
+  "summary": "Fuel handling for ports, harbours, marinas and bunkering operations, where corrosion resistance, spill prevention and accurate transfer are critical.",
+  "capabilities": "Port and marina fuel stations\nBunkering transfer and metering\nCorrosion-resistant pipework\nSpill containment and safety\nStorage tank installation\nInspection and maintenance",
+  "image": ""
+ }
+},
+{
+ "model": "core.sector",
+ "pk": 7,
+ "fields": {
+  "order": 6,
+  "is_active": true,
+  "name": "Energy & Power Facilities",
+  "slug": "energy-power",
+  "icon": "bolt",
+  "summary": "Fuel systems for power stations, independent power producers and standby generation, keeping engines supplied and fuel stocks accurately measured.",
+  "capabilities": "Bulk and day-tank systems\nGenerator fuel supply and transfer\nTank gauging and remote monitoring\nFuel polishing and filtration\nLeak detection\n24/7 maintenance support",
+  "image": ""
+ }
+},
+{
+ "model": "core.sector",
+ "pk": 8,
+ "fields": {
+  "order": 7,
+  "is_active": true,
+  "name": "Government & Industrial Facilities",
+  "slug": "government-facilities",
+  "icon": "govt",
+  "summary": "Secure, compliant fuel installations for government institutions, hospitals, security services and large industrial estates, including standby power fuel systems.",
+  "capabilities": "Standby generator fuel systems\nSecure on-site fuel stations\nAccess-controlled dispensing\nCompliance-focused installations\nTank testing and certification\nLong-term maintenance contracts",
+  "image": ""
+ }
+},
+{
+ "model": "core.project",
+ "pk": 1,
+ "fields": {
+  "order": 0,
+  "is_active": true,
+  "title": "New-build retail fuel station",
+  "client": "",
+  "location": "Nairobi",
+  "country": "Kenya",
+  "sector": 1,
+  "year": 2025,
+  "summary": "Turnkey construction of a six-pump forecourt including double-wall tanks, flexible piping, ATG and forecourt controller.",
+  "image": ""
+ }
+},
+{
+ "model": "core.project",
+ "pk": 2,
+ "fields": {
+  "order": 1,
+  "is_active": true,
+  "title": "Depot loading bay upgrade",
+  "client": "",
+  "location": "Mombasa",
+  "country": "Kenya",
+  "sector": 2,
+  "year": 2024,
+  "summary": "Replacement of loading arms and installation of custody-transfer metering skids with batch control on four loading bays.",
+  "image": ""
+ }
+},
+{
+ "model": "core.project",
+ "pk": 3,
+ "fields": {
+  "order": 2,
+  "is_active": true,
+  "title": "Mine-site fuelling facility",
+  "client": "",
+  "location": "Geita",
+  "country": "Tanzania",
+  "sector": 3,
+  "year": 2024,
+  "summary": "Supply and installation of above-ground bunded tanks and high-flow dispensers with fleet fuel management for haul trucks.",
+  "image": ""
+ }
+},
+{
+ "model": "core.project",
+ "pk": 4,
+ "fields": {
+  "order": 3,
+  "is_active": true,
+  "title": "Network-wide dispenser upgrade",
+  "client": "",
+  "location": "Kampala",
+  "country": "Uganda",
+  "sector": 1,
+  "year": 2023,
+  "summary": "Replacement of legacy dispensers across multiple stations, with calibration and integration into central station software.",
+  "image": ""
+ }
+},
+{
+ "model": "core.project",
+ "pk": 5,
+ "fields": {
+  "order": 4,
+  "is_active": true,
+  "title": "Generator fuel system",
+  "client": "",
+  "location": "Kigali",
+  "country": "Rwanda",
+  "sector": 7,
+  "year": 2023,
+  "summary": "Bulk storage, transfer pumps and day-tank automation for a standby power plant.",
+  "image": ""
+ }
+},
+{
+ "model": "core.project",
+ "pk": 6,
+ "fields": {
+  "order": 5,
+  "is_active": true,
+  "title": "Tank integrity programme",
+  "client": "",
+  "location": "Nakuru",
+  "country": "Kenya",
+  "sector": 1,
+  "year": 2022,
+  "summary": "Tank and line tightness testing, cleaning and remediation across a regional station network.",
+  "image": ""
+ }
+}
+]

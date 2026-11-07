@@ -1,0 +1,6 @@
+{% load octagon %}<article class="card reveal">
+  <div class="card-media"><img src="{{ p.image_url }}" alt="{{ p.title }}" loading="lazy">{% if p.year %}<span class="badge">{{ p.year }}</span>{% endif %}</div>
+  <p class="eyebrow">{% if p.sector %}{{ p.sector.name }} · {% endif %}{{ p.location }}, {{ p.country }}</p>
+  <h3>{{ p.title }}</h3>
+  <p class="desc">{{ p.summary }}</p>
+</article>

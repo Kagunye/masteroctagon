@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Projects | {{ company.name }}{% endblock %}
+{% block content %}
+{% include "core/_page_hero.html" with image=img.projects eyebrow="Track record" heading="Delivered <em>across the region.</em>" lead="A selection of stations, depots and industrial fuel facilities delivered across East Africa." crumb="Projects" %}
+<section class="section">
+  <div class="shell">
+    <div class="chips filters">
+      <a href="{% url 'core:projects' %}" class="chip {% if not active_sector %}chip-active{% endif %}">All projects</a>
+      {% for s in sectors %}<a href="?sector={{ s.slug }}" class="chip {% if active_sector == s.slug %}chip-active{% endif %}">{{ s.name }}</a>{% endfor %}
+    </div>
+    <div class="cards">
+      {% for p in projects %}{% include "core/_project_card.html" %}{% empty %}<p class="muted">No projects listed for this sector yet.</p>{% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

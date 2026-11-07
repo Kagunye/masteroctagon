@@ -1,0 +1,38 @@
+{% extends "base.html" %}{% load octagon %}
+{% block title %}{{ service.name }} | {{ company.name }}{% endblock %}
+{% block meta_description %}{{ service.summary }}{% endblock %}
+{% block content %}
+{% url 'core:services' as services_url %}
+{% with crumb='<a href="'|add:services_url|add:'">Services</a><span>/</span>'|add:service.name %}
+{% include "core/_page_hero.html" with image=service.image_url eyebrow="Engineering service" heading=service.name lead=service.summary %}
+{% endwith %}
+<section class="section">
+  <div class="shell detail">
+    <div class="reveal">
+      {% with slides=service.gallery.all %}{% if slides %}
+      <div class="slider detail-slider" data-slider>
+        {% for g in slides %}<img src="{{ g.image.url }}" alt="{{ g.caption|default:service.name }}" class="slide {% if forloop.first %}active{% endif %}">{% endfor %}
+        {% if slides|length > 1 %}<div class="slider-dots">{% for g in slides %}<button type="button" class="{% if forloop.first %}active{% endif %}" aria-label="Show image {{ forloop.counter }}"></button>{% endfor %}</div>{% endif %}
+        <p class="slider-caption">{{ slides.0.caption }}</p>
+      </div>
+      {% endif %}{% endwith %}
+      <div class="prose">
+        <h2>Overview</h2>
+        {{ service.description|linebreaks }}
+      </div>
+      {% if service.deliverable_list %}
+      <h3 style="font-size:1.4rem;margin:48px 0 18px">What's included</h3>
+      <ul class="ticks cols-2">{% for d in service.deliverable_list %}<li>{% icon 'check' 16 %}<span>{{ d }}</span></li>{% endfor %}</ul>
+      {% endif %}
+      <a href="{% url 'core:quote' %}?item={{ service.name|urlencode }}" class="btn btn-primary btn-lg">Discuss your project {% icon 'arrow-up-right' 16 %}</a>
+    </div>
+    <aside class="sticky reveal reveal-delay-1">
+      <div class="panel">
+        <p class="eyebrow">More services</p>
+        <h3 style="margin-top:14px">Explore</h3>
+        <nav class="side-links">{% for o in others %}<a href="{{ o.get_absolute_url }}">{{ o.name }} {% icon 'arrow-up-right' 16 %}</a>{% endfor %}</nav>
+      </div>
+    </aside>
+  </div>
+</section>
+{% endblock %}

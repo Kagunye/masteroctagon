@@ -1,0 +1,9 @@
+{% load octagon %}<section class="page-hero{% if product_photo %} page-hero-product{% endif %}">
+  <img src="{{ image }}" alt="" fetchpriority="high">
+  <div class="shell">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="{% url 'core:home' %}">Home</a>{% if crumb %}<span>/</span>{{ crumb|safe }}{% endif %}</nav>
+    {% if eyebrow %}<p class="eyebrow eyebrow-gold">{{ eyebrow }}</p>{% endif %}
+    <h1>{{ heading|safe }}</h1>
+    {% if lead %}<p class="lead">{{ lead }}</p>{% endif %}
+  </div>
+</section>

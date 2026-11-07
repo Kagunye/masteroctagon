@@ -1,0 +1,178 @@
+{% extends "base.html" %}{% load octagon %}
+{% block content %}
+<section class="hero">
+  <img class="hero-bg" src="{{ img.hero }}" alt="" fetchpriority="high">
+  <div class="hero-shade"></div>
+  <div class="hero-bottom"></div>
+  <div class="hero-inner">
+    <p class="eyebrow eyebrow-center eyebrow-gold reveal">Equipping East Africa's downstream</p>
+    <h1 class="reveal reveal-delay-1">Petroleum equipment, <em>engineered to last.</em></h1>
+    <p class="lead reveal reveal-delay-2">Master Octagon supplies, installs and maintains fuel handling equipment for retail fuel stations, terminals and industrial fuel operations across East Africa.</p>
+    <div class="hero-actions reveal reveal-delay-3">
+      <a href="{% url 'core:quote' %}" class="btn btn-primary btn-lg">Request a quote {% icon 'arrow-up-right' 16 %}</a>
+      <a href="{% url 'core:products' %}" class="btn btn-outline-light btn-lg">Explore equipment {% icon 'arrow-up-right' 16 %}</a>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true"></div>
+</section>
+
+<section class="marquee" aria-label="What we do">
+  <div class="marquee-track">
+    {% for pass in "12" %}
+    <ul class="marquee-group" {% if not forloop.first %}aria-hidden="true"{% endif %}>
+      {% for c in categories %}<li><a href="{{ c.get_absolute_url }}" {% if not forloop.parentloop.first %}tabindex="-1"{% endif %}>{% icon c.icon 22 %}<span>{{ c.name }}</span></a></li>{% endfor %}
+      {% for s in services %}<li><a href="{{ s.get_absolute_url }}" {% if not forloop.parentloop.first %}tabindex="-1"{% endif %}>{% icon s.icon 22 %}<span>{{ s.name }}</span></a></li>{% endfor %}
+    </ul>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="shell intro">
+    <div class="intro-media intro-media-product reveal">
+      <img src="{{ img.home_intro }}" alt="Twin-nozzle electronic fuel dispenser" loading="lazy">
+      <div class="intro-badge"><strong>24/7</strong><span>Breakdown support for<br>maintenance customers</span></div>
+    </div>
+    <div class="intro-body reveal reveal-delay-1">
+      <p class="eyebrow">Built on engineering</p>
+      <h2>We keep fuel moving safely — from <em>terminal gantry</em> to forecourt nozzle.</h2>
+      <hr class="rule">
+      <div class="copy">
+        <p>Master Octagon is a privately owned company specialising in petroleum equipment and related engineering services, operating within the oil and gas downstream sector.</p>
+        <p>We support retail fuel stations, terminals and industrial fuel operations across East Africa with quality equipment, certified technicians and one accountable team from design to handover.</p>
+      </div>
+      <div><a href="{% url 'core:about' %}" class="btn btn-outline">Discover Master Octagon {% icon 'arrow-up-right' 14 %}</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="shell">
+    <div class="stats-grid">
+      {% for value, label in stats %}<div class="stat"><strong>{{ value }}</strong><span>{{ label }}</span></div>{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-ink on-dark">
+  <div class="shell">
+    <div class="section-head split">
+      <div>
+        <p class="eyebrow">What we supply</p>
+        <h2 class="section-title">One partner. <em>Every piece of the system.</em></h2>
+      </div>
+      <p class="aside">From the dispenser on the island to the tank below it and the controller in the office — equipment specified for East African conditions.</p>
+    </div>
+    <div class="tabs" data-tabs>
+      <div class="tab-list" role="tablist">
+        {% for c in categories %}
+        <button class="tab {% if forloop.first %}active{% endif %}" role="tab" aria-selected="{{ forloop.first|yesno:'true,false' }}">
+          <span><small>{{ c.code|default:forloop.counter }}</small><strong>{{ c.name }}</strong></span>
+          {% icon 'arrow-up-right' 20 %}
+        </button>
+        {% endfor %}
+      </div>
+      <div class="tab-panels">
+        {% for c in categories %}
+        <div class="tab-panel {% if forloop.first %}active{% endif %} {% if c.has_product_photo %}product-photo{% endif %}" role="tabpanel">
+          <img src="{{ c.image_url }}" alt="{{ c.name }}" loading="lazy">
+          <div class="tab-panel-body">
+            <p class="eyebrow">{{ c.code }} · {{ c.products.all|length }} product line{{ c.products.all|length|pluralize }}</p>
+            <h3>{{ c.name }}</h3>
+            <p>{{ c.summary }}</p>
+            <ul>{% for p in c.products.all|slice:":3" %}<li>{{ p.name }}</li>{% endfor %}</ul>
+            <a href="{{ c.get_absolute_url }}" class="btn btn-primary">View range {% icon 'arrow-up-right' 14 %}</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div style="margin-top:48px"><a href="{% url 'core:products' %}" class="btn btn-primary">Explore all products {% icon 'arrow-up-right' 14 %}</a></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="shell">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Engineering services</p>
+        <h2 class="section-title">Everything your site <em>needs to run.</em></h2>
+      </div>
+      <a href="{% url 'core:services' %}" class="btn btn-outline">All services {% icon 'arrow-up-right' 14 %}</a>
+    </div>
+    <div class="tiles">
+      {% for s in services %}
+      {% include "core/_service_tile.html" %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="bw-band" data-bw>
+  <img src="{{ img.bw }}" alt="Master Octagon engineers inspecting pipework at height" loading="lazy">
+  <div class="shell bw-inner">
+    <p class="eyebrow eyebrow-plain bw-eyebrow">No shortcuts</p>
+    <h2 class="bw-title reveal">Engineered for safety.<br><span>Built to last.</span></h2>
+    <div class="bw-foot reveal reveal-delay-1">
+      <p>Every installation is planned, permitted and signed off by certified engineers, because in fuel handling there is no second chance.</p>
+      <a href="{% url 'core:contact' %}" class="btn btn-light">Talk to an engineer {% icon 'arrow-up-right' 14 %}</a>
+    </div>
+  </div>
+</section>
+
+<section class="photo-panel">
+  <img src="{{ img.why }}" alt="" loading="lazy" data-parallax>
+  <div class="shell on-dark">
+    <div class="content reveal">
+      <p class="eyebrow">Why Master Octagon</p>
+      <h2 class="section-title">Accuracy in every litre. <em>Safety on every site.</em></h2>
+      <div class="check-grid">
+        <p>{% icon 'check' 18 %} Installations to EPRA, KEBS &amp; international standards</p>
+        <p>{% icon 'check' 18 %} Factory-trained, certified technicians</p>
+        <p>{% icon 'check' 18 %} Calibrated, certified metering</p>
+        <p>{% icon 'check' 18 %} Local stock of critical spares</p>
+        <p>{% icon 'check' 18 %} Projects across eight countries</p>
+        <p>{% icon 'check' 18 %} One accountable team, design to handover</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-muted">
+  <div class="shell">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Who we serve</p>
+        <h2 class="section-title">Industries <em>we serve.</em></h2>
+      </div>
+      <a href="{% url 'core:sectors' %}" class="btn btn-outline">All industries {% icon 'arrow-up-right' 14 %}</a>
+    </div>
+    <div class="cards cards-4">
+      {% for s in sectors %}
+      <a href="{% url 'core:sectors' %}#{{ s.slug }}" class="card card-ruled reveal {% cycle '' 'reveal-delay-1' 'reveal-delay-2' %}">
+        <div class="card-media">{% with slides=s.slides %}{% if slides|length > 1 %}<div class="slider slider-slide" data-slider data-interval="4000">{% for url, cap in slides %}<img src="{{ url }}" alt="{{ cap }}" class="slide {% if forloop.first %}active{% endif %}" loading="lazy">{% endfor %}<div class="slider-dots">{% for x in slides %}<button type="button" class="{% if forloop.first %}active{% endif %}" aria-label="Show image {{ forloop.counter }}"></button>{% endfor %}</div></div>{% else %}<img src="{{ s.image_url }}" alt="{{ s.name }}" loading="lazy">{% endif %}{% endwith %}<span class="badge">{{ forloop.counter|stringformat:"02d" }}</span></div>
+        <p class="eyebrow">Industry</p>
+        <h3>{{ s.name }}</h3>
+        <p class="desc">{{ s.summary|truncatewords:18 }}</p>
+        <span class="link-arrow">Explore {% icon 'arrow-up-right' 14 %}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% if projects %}
+<section class="section">
+  <div class="shell">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Track record</p>
+        <h2 class="section-title">Recent <em>projects.</em></h2>
+      </div>
+      <a href="{% url 'core:projects' %}" class="btn btn-outline">All projects {% icon 'arrow-up-right' 14 %}</a>
+    </div>
+    <div class="cards">{% for p in projects %}{% include "core/_project_card.html" %}{% endfor %}</div>
+  </div>
+</section>
+{% endif %}
+{% endblock %}

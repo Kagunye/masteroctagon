@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}{{ category.name }} | {{ company.name }}{% endblock %}
+{% block meta_description %}{{ category.summary }}{% endblock %}
+{% block content %}
+{% url 'core:products' as products_url %}
+{% with crumb='<a href="'|add:products_url|add:'">Products</a><span>/</span>'|add:category.name %}
+{% include "core/_page_hero.html" with product_photo=category.has_product_photo image=category.image_url eyebrow=category.code|default:"Category" heading=category.name lead=category.summary %}
+{% endwith %}
+<section class="section">
+  <div class="shell">
+    <div class="cards">
+      {% for p in products %}{% include "core/_product_card.html" %}{% empty %}<p>Products in this category are coming soon. <a href="{% url 'core:quote' %}" class="link-arrow">Ask us about your requirement</a></p>{% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

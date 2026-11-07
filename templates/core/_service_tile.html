@@ -1,0 +1,12 @@
+{% load octagon %}{% with slides=s.gallery.all %}<a href="{{ s.get_absolute_url }}" class="tile reveal {% if slides %}tile-has-media{% endif %} {% cycle '' 'reveal-delay-1' 'reveal-delay-2' %}">
+  {% if slides %}
+  <div class="slider tile-slider" data-slider>
+    {% for g in slides %}<img src="{{ g.image.url }}" alt="{{ g.caption|default:s.name }}" class="slide {% if forloop.first %}active{% endif %}" loading="lazy">{% endfor %}
+    {% if slides|length > 1 %}<div class="slider-dots">{% for g in slides %}<button type="button" class="{% if forloop.first %}active{% endif %}" aria-label="Show image {{ forloop.counter }}"></button>{% endfor %}</div>{% endif %}
+  </div>
+  {% else %}{% icon s.icon 32 %}{% endif %}
+  <p class="num">{{ forloop.counter|stringformat:"02d" }}</p>
+  <h3>{{ s.name }}</h3>
+  <p>{{ s.summary }}</p>
+  <span class="link-arrow">Learn more {% icon 'arrow-up-right' 14 %}</span>
+</a>{% endwith %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}{% load octagon %}
+{% block title %}Contact us | {{ company.name }}{% endblock %}
+{% block content %}
+{% include "core/_page_hero.html" with image=img.contact eyebrow="Get in touch" heading="Let's talk about <em>your site.</em>" lead="Questions about equipment, service or a project? Our team is ready to help." crumb="Contact" %}
+<section class="section">
+  <div class="shell detail">
+    <div class="reveal">
+      <p class="eyebrow">Send a message</p>
+      <h2 class="section-title" style="margin-bottom:40px">How can we <em>help?</em></h2>
+      {% include "core/_form.html" %}
+    </div>
+    <aside class="sticky reveal reveal-delay-1">
+      <div class="contact-list">
+        <div>{% icon 'pin' 20 %}<div><small>Head office</small>{{ company.address }}</div></div>
+        <div>{% icon 'phone' 20 %}<div><small>Phone</small><a href="tel:{{ company.phone|cut:' ' }}">{{ company.phone }}</a></div></div>
+        <div>{% icon 'mail' 20 %}<div><small>Email</small><a href="mailto:{{ company.email }}">{{ company.email }}</a></div></div>
+        <div>{% icon 'clock' 20 %}<div><small>Hours</small>{{ company.hours }}</div></div>
+      </div>
+      <div class="panel panel-ink on-dark">
+        <p class="eyebrow">Emergency</p>
+        <h3 style="margin-top:14px">Station down?</h3>
+        <p style="margin-bottom:22px">Maintenance customers can reach our 24/7 breakdown line for emergency call-outs.</p>
+        <a href="tel:{{ company.phone|cut:' ' }}" class="btn btn-primary">{% icon 'phone' 14 %} Call support</a>
+      </div>
+    </aside>
+  </div>
+</section>
+{% endblock %}

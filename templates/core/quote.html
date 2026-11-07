@@ -1,0 +1,27 @@
+{% extends "base.html" %}{% load octagon %}
+{% block title %}Request a quote | {{ company.name }}{% endblock %}
+{% block cta %}{% endblock %}
+{% block content %}
+{% include "core/_page_hero.html" with image=img.quote eyebrow="Commercial enquiries" heading="Request a <em>quote.</em>" lead="Tell us about your site and requirements. An engineer will respond with a proposal." crumb="Request a quote" %}
+<section class="section">
+  <div class="shell detail">
+    <div class="reveal">
+      <p class="eyebrow">Your project</p>
+      <h2 class="section-title" style="margin-bottom:40px">Tell us what <em>you need.</em></h2>
+      {% include "core/_form.html" with submit_label="Submit request" %}
+    </div>
+    <aside class="sticky reveal reveal-delay-1">
+      <div class="panel panel-ink on-dark">
+        <p class="eyebrow">What happens next</p>
+        <h3 style="margin:14px 0 22px">Our process</h3>
+        <ol class="steps">
+          <li><strong>Review</strong><span>We review your requirements within one business day.</span></li>
+          <li><strong>Site survey</strong><span>Where needed, an engineer visits to assess the site.</span></li>
+          <li><strong>Proposal</strong><span>A detailed technical and commercial proposal.</span></li>
+          <li><strong>Delivery</strong><span>Supply, installation, commissioning and handover.</span></li>
+        </ol>
+      </div>
+    </aside>
+  </div>
+</section>
+{% endblock %}

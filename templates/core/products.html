@@ -1,0 +1,23 @@
+{% extends "base.html" %}{% load octagon %}
+{% block title %}Products | {{ company.name }}{% endblock %}
+{% block content %}
+{% include "core/_page_hero.html" with image=img.products eyebrow="Equipment" heading="Petroleum equipment, <em>built for the forecourt.</em>" lead="Dispensers, storage, automation, terminal systems and accessories, supplied, installed and supported by Master Octagon." crumb="Products" %}
+<section class="section">
+  <div class="shell">
+    {% for c in categories %}
+    <div class="feature-row {% cycle '' 'reverse' %}" id="{{ c.slug }}">
+      <a href="{{ c.get_absolute_url }}" class="feature-media reveal {% if c.has_product_photo %}product-photo{% endif %}"><img src="{{ c.image_url }}" alt="{{ c.name }}" loading="lazy">{% if c.code %}<span class="code">{{ c.code }}</span>{% endif %}</a>
+      <div class="feature-body reveal reveal-delay-1">
+        <p class="eyebrow">{{ forloop.counter|stringformat:"02d" }} · Category</p>
+        <h2>{{ c.name }}</h2>
+        <p>{{ c.summary }}</p>
+        <ul class="ticks">
+          {% for p in c.products.all %}{% if p.is_active %}<li><a href="{{ p.get_absolute_url }}" style="display:flex;gap:12px;align-items:center;width:100%;justify-content:space-between"><span>{{ p.name }}</span>{% icon 'arrow-up-right' 16 %}</a></li>{% endif %}{% endfor %}
+        </ul>
+        <a href="{{ c.get_absolute_url }}" class="btn btn-outline">View {{ c.name|lower }} {% icon 'arrow-up-right' 14 %}</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

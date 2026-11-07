@@ -1,0 +1,23 @@
+{% extends "base.html" %}{% load octagon %}
+{% block title %}Industries | {{ company.name }}{% endblock %}
+{% block content %}
+{% include "core/_page_hero.html" with image=img.sectors eyebrow="Industries we serve" heading="Fuel infrastructure for <em>every industry.</em>" lead="From retail forecourts and fleet yards to airports, ports and power stations across East Africa." crumb="Industries" %}
+<section class="section">
+  <div class="shell">
+    {% for s in sectors %}
+    <div class="feature-row {% cycle '' 'reverse' %}" id="{{ s.slug }}">
+      <div class="feature-media reveal">{% with slides=s.slides %}{% if slides|length > 1 %}<div class="slider slider-slide" data-slider data-interval="4000">{% for url, cap in slides %}<img src="{{ url }}" alt="{{ cap }}" class="slide {% if forloop.first %}active{% endif %}" loading="lazy">{% endfor %}<div class="slider-dots">{% for x in slides %}<button type="button" class="{% if forloop.first %}active{% endif %}" aria-label="Show image {{ forloop.counter }}"></button>{% endfor %}</div></div>{% else %}<img src="{{ s.image_url }}" alt="{{ s.name }}" loading="lazy">{% endif %}{% endwith %}<span class="code">{{ forloop.counter|stringformat:"02d" }}</span></div>
+      <div class="feature-body reveal reveal-delay-1">
+        <p class="eyebrow">Industry {{ forloop.counter|stringformat:"02d" }}</p>
+        <h2>{{ s.name }}</h2>
+        <p>{{ s.summary }}</p>
+        {% if s.capability_list %}
+        <ul class="ticks cols-2">{% for c in s.capability_list %}<li>{% icon 'check' 16 %}<span>{{ c }}</span></li>{% endfor %}</ul>
+        {% endif %}
+        <a href="{% url 'core:projects' %}?sector={{ s.slug }}" class="btn btn-outline">View projects {% icon 'arrow-up-right' 14 %}</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
