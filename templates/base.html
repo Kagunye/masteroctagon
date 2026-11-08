@@ -21,9 +21,9 @@
         <img src="{% static 'img/logo.webp' %}" alt="{{ company.legal_name }}" class="brand-logo" width="720" height="246">
       </a>
 
-      <nav class="main-nav" aria-label="Main navigation">
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
         <div class="nav-item"><a href="{% url 'core:home' %}" class="nav-link {% if u == 'home' %}active{% endif %}">Home</a></div>
-        <div class="nav-item">
+        <div class="nav-item has-sub">
           <a href="{% url 'core:about' %}" class="nav-link {% if u == 'about' or u == 'projects' %}active{% endif %}">Company {% icon 'chevron' 12 'chev' %}</a>
           <div class="mega">
             <div class="shell mega-inner">
@@ -40,8 +40,9 @@
               </div>
             </div>
           </div>
+          <div class="m-sub"><a href="{% url 'core:about' %}">About us</a><a href="{% url 'core:sectors' %}">Industries</a><a href="{% url 'core:projects' %}">Projects</a></div>
         </div>
-        <div class="nav-item">
+        <div class="nav-item has-sub">
           <a href="{% url 'core:sectors' %}" class="nav-link {% if u == 'sectors' %}active{% endif %}">Industries {% icon 'chevron' 12 'chev' %}</a>
           <div class="mega">
             <div class="shell mega-inner mega-inner-wide">
@@ -56,8 +57,9 @@
               </div>
             </div>
           </div>
+          <div class="m-sub"><a href="{% url 'core:sectors' %}" class="m-sub-all">All industries</a>{% for s in nav_industries %}<a href="{% url 'core:sectors' %}#{{ s.slug }}">{{ s.name }}</a>{% endfor %}</div>
         </div>
-        <div class="nav-item">
+        <div class="nav-item has-sub">
           <a href="{% url 'core:products' %}" class="nav-link {% if 'product' in u %}active{% endif %}">Products {% icon 'chevron' 12 'chev' %}</a>
           <div class="mega">
             <div class="shell mega-inner">
@@ -72,8 +74,9 @@
               </div>
             </div>
           </div>
+          <div class="m-sub"><a href="{% url 'core:products' %}" class="m-sub-all">All products</a>{% for c in nav_categories %}<a href="{{ c.get_absolute_url }}">{{ c.name }}</a>{% endfor %}</div>
         </div>
-        <div class="nav-item">
+        <div class="nav-item has-sub">
           <a href="{% url 'core:services' %}" class="nav-link {% if 'service' in u %}active{% endif %}">Services {% icon 'chevron' 12 'chev' %}</a>
           <div class="mega">
             <div class="shell mega-inner">
@@ -88,14 +91,19 @@
               </div>
             </div>
           </div>
+          <div class="m-sub"><a href="{% url 'core:services' %}" class="m-sub-all">All services</a>{% for sv in nav_services %}<a href="{{ sv.get_absolute_url }}">{{ sv.name }}</a>{% endfor %}</div>
         </div>
         <div class="nav-item"><a href="{% url 'core:contact' %}" class="nav-link {% if u == 'contact' %}active{% endif %}">Contact</a></div>
         <a href="{% url 'core:quote' %}" class="btn btn-primary btn-lg mobile-cta">Request a quote {% icon 'arrow-up-right' 16 %}</a>
+        <div class="m-contact">
+          <a href="tel:{{ company.phone|cut:' ' }}">{% icon 'phone' 16 %} {{ company.phone }}</a>
+          <a href="mailto:{{ company.email }}">{% icon 'mail' 16 %} {{ company.email }}</a>
+        </div>
       </nav>
 
       <div class="header-cta">
         <a href="{% url 'core:quote' %}" class="btn btn-primary">Request a quote {% icon 'arrow-up-right' 14 %}</a>
-        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">{% icon 'menu' 26 %}</button>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav"><span class="i-open">{% icon 'menu' 26 %}</span><span class="i-close">{% icon 'close' 26 %}</span></button>
       </div>
     </div>
   </header>

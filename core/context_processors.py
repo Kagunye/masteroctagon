@@ -2,7 +2,7 @@ from . import images
 from .models import ProductCategory, Sector, Service
 
 # Bump to force browsers to reload CSS/JS after changes.
-ASSET_VERSION = "26"
+ASSET_VERSION = "27"
 
 COMPANY = {
     "name": "Master Octagon",

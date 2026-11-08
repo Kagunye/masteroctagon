@@ -11,13 +11,42 @@
   window.addEventListener('scroll', onScroll, { passive: true });
 
   // Mobile menu
+  var mq = window.matchMedia('(max-width: 1023px)');
+  function setMenu(open) {
+    if (!nav || !toggle) return;
+    nav.classList.toggle('open', open);
+    header.classList.toggle('menu-open', open);
+    document.body.classList.toggle('nav-open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    if (!open) nav.querySelectorAll('.sub-open').forEach(function (el) { el.classList.remove('sub-open'); });
+  }
   if (toggle && nav) {
-    toggle.addEventListener('click', function () {
-      var open = nav.classList.toggle('open');
-      header.classList.toggle('menu-open', open);
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      document.body.style.overflow = open ? 'hidden' : '';
+    toggle.addEventListener('click', function () { setMenu(!nav.classList.contains('open')); });
+    // On phones, dropdown parents expand their sub-list instead of leaving the page.
+    nav.querySelectorAll('.nav-item.has-sub > .nav-link').forEach(function (link) {
+      link.setAttribute('aria-expanded', 'false');
+      link.addEventListener('click', function (e) {
+        if (!mq.matches) return;
+        e.preventDefault();
+        var item = link.parentElement, open = !item.classList.contains('sub-open');
+        nav.querySelectorAll('.nav-item.sub-open').forEach(function (el) {
+          if (el !== item) { el.classList.remove('sub-open'); el.firstElementChild.setAttribute('aria-expanded', 'false'); }
+        });
+        item.classList.toggle('sub-open', open);
+        link.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
     });
+    // Close after choosing a destination, on Escape, or when widening to desktop.
+    nav.addEventListener('click', function (e) {
+      var a = e.target.closest('a');
+      if (a && !a.matches('.nav-item.has-sub > .nav-link')) setMenu(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && nav.classList.contains('open')) { setMenu(false); toggle.focus(); }
+    });
+    var onMq = function (e) { if (!e.matches) setMenu(false); };
+    if (mq.addEventListener) mq.addEventListener('change', onMq); else mq.addListener(onMq);
   }
 
   // Product tabs
